@@ -143,7 +143,7 @@ export default defineConfig({
     allowedHosts: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: process.env.BOOKORBIT_API_URL ?? 'http://localhost:3000',
         agent: apiAgent,
         configure: (proxy) => {
           proxy.on('proxyReq', (proxyReq, req) => {
@@ -155,7 +155,7 @@ export default defineConfig({
         },
       },
       '/socket.io': {
-        target: 'http://localhost:3000',
+        target: process.env.BOOKORBIT_API_URL ?? 'http://localhost:3000',
         ws: true,
         changeOrigin: true,
       },

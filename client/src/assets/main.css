@@ -779,3 +779,21 @@
 .driver-popover-arrow-side-bottom.driver-popover-arrow {
   border-top-color: var(--card) !important;
 }
+
+:root {
+  --shelf-paper: oklch(0.96 0.018 85);
+  --shelf-wood: oklch(0.39 0.065 55);
+  --shelf-edge: oklch(0.55 0.08 65);
+  --shelf-grain: oklch(0.3 0.04 55 / 0.35);
+  --shelf-ink: oklch(0.96 0.02 85);
+  --shelf-book-0: oklch(0.34 0.045 160);
+  --shelf-book-1: oklch(0.4 0.085 30);
+  --shelf-book-2: oklch(0.38 0.045 245);
+  --shelf-book-3: oklch(0.43 0.06 70);
+  --shelf-book-4: oklch(0.34 0.035 320);
+}
+.dark {
+  --shelf-paper: oklch(0.23 0.015 65);
+  --shelf-wood: oklch(0.29 0.04 55);
+  --shelf-edge: oklch(0.4 0.055 65);
+}

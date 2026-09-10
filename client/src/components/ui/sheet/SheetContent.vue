@@ -9,7 +9,7 @@ import SheetOverlay from './SheetOverlay.vue'
 
 interface SheetContentProps extends DialogContentProps {
   class?: HTMLAttributes['class']
-  side?: 'top' | 'right' | 'bottom' | 'left'
+  side?: 'top' | 'right' | 'bottom' | 'left' | 'center'
   /** Drops the built-in corner close button when the sheet content supplies its own header actions. */
   hideClose?: boolean
 }
@@ -36,6 +36,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       :class="
         cn(
           'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-2 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+          side === 'center' &&
+            'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-3xl h-[min(85dvh,800px)] rounded-xl border data-[state=open]:fade-in data-[state=closed]:fade-out motion-reduce:animate-none',
           side === 'right' &&
             'data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm',
           side === 'left' &&

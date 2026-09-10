@@ -115,7 +115,7 @@ async function bootstrap() {
   }
 
   app.enableShutdownHooks();
-  await app.listen(process.env.PORT ?? 3000, '0.0.0.0');
+  await app.listen(process.env.PORT ?? 3000, process.env.HOST ?? '0.0.0.0');
 }
 
 bootstrap().catch((err: unknown) => {

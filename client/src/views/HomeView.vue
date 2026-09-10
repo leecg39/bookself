@@ -18,6 +18,7 @@ import {
   Telescope,
   X,
 } from '@lucide/vue'
+import BookshelfScene from '@/features/bookshelf/components/BookshelfScene.vue'
 import VirtualBookGrid from '@/features/book/components/VirtualBookGrid.vue'
 import BookListRow from '@/features/book/components/BookListRow.vue'
 import VirtualBookTable from '@/features/book/components/VirtualBookTable.vue'
@@ -73,7 +74,16 @@ import { type QuerySelectionState } from '@/features/book/composables/useBookBul
 const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
-const { viewMode, effectiveViewMode } = useEffectiveViewMode()
+const shelfRef = ref<InstanceType<typeof BookshelfScene> | null>(null)
+function selectShelfMode() {
+  viewMode.value = 'shelf'
+}
+function restoreShelfFocus() {
+  if (effectiveViewMode.value !== 'shelf') return
+  const index = slots.value.findIndex((book) => book.id === quickViewBookId.value)
+  if (index >= 0) shelfRef.value?.focusIndex(index)
+}
+const { viewMode, effectiveViewMode } = useEffectiveViewMode(true)
 const { libraries, loaded: librariesLoaded } = useLibraries()
 const { hasPermission, isDemoRestrictedAccount } = usePermissions()
 
@@ -97,7 +107,8 @@ provide(COVER_ASPECT_RATIO_KEY, currentCoverAspectRatio)
 const { getEffectivePreference, setPreference, prefs } = useSeriesCollapsePreference()
 const collapseEnabledRef = ref(libraryId.value !== null ? getEffectivePreference({ libraryId: libraryId.value }) : false)
 const selectionMode = ref(false)
-const effectiveCollapseEnabled = useEffectiveSeriesCollapse(collapseEnabledRef, selectionMode)
+const preferredCollapseEnabled = useEffectiveSeriesCollapse(collapseEnabledRef, selectionMode)
+const effectiveCollapseEnabled = computed(() => effectiveViewMode.value !== 'shelf' && preferredCollapseEnabled.value)
 
 watch(libraryId, (id) => {
   collapseEnabledRef.value = id !== null ? getEffectivePreference({ libraryId: id }) : false
@@ -125,6 +136,7 @@ const {
   hasMorePrefix,
   loadMorePrefix,
   handleRange,
+  ensureRange,
   handleFirstVisibleIndex,
   registerScroller,
   handleJump,
@@ -149,6 +161,35 @@ const {
   collapseEnabled: effectiveCollapseEnabled,
   q: debouncedQuery,
 })
+const shelfDialogIndex = computed(() => slots.value.findIndex((book) => book.id === quickViewBookId.value))
+const shelfNavigating = ref(false)
+async function navigateShelf(direction: number) {
+  if (shelfNavigating.value) return
+  const index = shelfDialogIndex.value + direction
+  if (index < 0 || index >= total.value) return
+  shelfNavigating.value = true
+  const currentId = quickViewBookId.value
+  const currentQuery = JSON.stringify([libraryId.value, debouncedQuery.value, filter.value, sort.value])
+  try {
+    await ensureRange(index, index)
+    const book = slots.value[index]
+    if (
+      quickViewBookId.value === currentId &&
+      JSON.stringify([libraryId.value, debouncedQuery.value, filter.value, sort.value]) === currentQuery &&
+      book &&
+      !('placeholder' in book)
+    )
+      quickViewBookId.value = book.id
+  } finally {
+    shelfNavigating.value = false
+  }
+}
+function previousShelfBook() {
+  void navigateShelf(-1)
+}
+function nextShelfBook() {
+  void navigateShelf(1)
+}
 const { onLibraryUploadCompleted } = useLibraryUploadEvents()
 useScrollRestoreOnActivate(mainRef)
 const { setBookContext } = useBookNavigation()
@@ -609,6 +650,16 @@ defineOptions({ name: 'HomeView' })
         @toggle-selection="toggleSelectionMode"
       >
         <template #toolbar>
+          <button
+            type="button"
+            aria-label="책장 보기"
+            :aria-pressed="effectiveViewMode === 'shelf'"
+            class="rounded-lg px-3 py-1.5 text-xs font-semibold hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-primary"
+            :class="effectiveViewMode === 'shelf' ? 'bg-primary/10 text-primary' : 'text-muted-foreground'"
+            @click="selectShelfMode"
+          >
+            책장
+          </button>
           <div v-if="effectiveViewMode !== 'table'" class="hidden sm:flex items-center gap-1">
             <Popover>
               <PopoverTrigger as-child>
@@ -936,6 +987,17 @@ defineOptions({ name: 'HomeView' })
             </div>
           </div>
 
+          <BookshelfScene
+            v-if="effectiveViewMode === 'shelf' && books.length > 0"
+            ref="shelfRef"
+            :books="slots"
+            :viewport="mainRef"
+            :selection-mode="selectionMode"
+            :is-selected="isSelected"
+            @range="handleRange"
+            @action="handleBookAction"
+            @select="handleSelect"
+          />
           <!-- Grid view -->
           <VirtualBookGrid
             v-if="effectiveViewMode === 'grid' && books.length > 0"
@@ -1023,6 +1085,12 @@ defineOptions({ name: 'HomeView' })
     </section>
 
     <BookQuickView
+      :shelf="effectiveViewMode === 'shelf'"
+      :has-previous="shelfDialogIndex > 0 && !shelfNavigating"
+      :has-next="shelfDialogIndex >= 0 && shelfDialogIndex < total - 1 && !shelfNavigating"
+      @previous="previousShelfBook"
+      @next="nextShelfBook"
+      @closed="restoreShelfFocus"
       :book-id="quickViewBookId"
       :open="quickViewOpen"
       @update:open="quickViewOpen = $event"

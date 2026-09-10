@@ -25,10 +25,13 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-const props = defineProps<{ bookId: number | null; open: boolean }>()
+const props = defineProps<{ bookId: number | null; open: boolean; shelf?: boolean; hasPrevious?: boolean; hasNext?: boolean }>()
 const { hasPermission } = usePermissions()
 const emit = defineEmits<{
   'update:open': [value: boolean]
+  closed: []
+  previous: []
+  next: []
   action: [type: 'add-to-collection' | 'delete']
 }>()
 
@@ -41,8 +44,21 @@ type ProviderLink = {
 }
 
 const router = useRouter()
-const { detail, loading, fetch } = useBookDetail()
+const { detail, loading, error, notFound, fetch } = useBookDetail()
 
+const showSpine = ref(false)
+function previousBook() {
+  emit('previous')
+}
+function nextBook() {
+  emit('next')
+}
+function toggleSpine() {
+  showSpine.value = !showSpine.value
+}
+function handleClosed() {
+  emit('closed')
+}
 const coverLoaded = ref(false)
 const coverFailed = ref(false)
 const coverImageRatio = ref<number | null>(null)
@@ -55,6 +71,7 @@ watch(
   () => props.bookId,
   (id) => {
     if (id !== null) {
+      showSpine.value = false
       coverLoaded.value = false
       coverFailed.value = false
       coverImageRatio.value = null
@@ -286,12 +303,23 @@ function handleDelete() {
 <template>
   <TooltipProvider :delay-duration="0">
     <Sheet :open="props.open" @update:open="emit('update:open', $event)">
-      <SheetContent side="right" class="sm:max-w-100 p-0 overflow-hidden">
+      <SheetContent
+        :side="shelf ? 'center' : 'right'"
+        :class="shelf ? 'p-0 overflow-hidden bg-(--shelf-paper)' : 'sm:max-w-100 p-0 overflow-hidden'"
+        @close-auto-focus="handleClosed"
+      >
         <SheetTitle class="sr-only">{{
           detail?.title ? t('book.quickView.titleFor', { title: detail.title }) : t('book.quickView.title')
         }}</SheetTitle>
         <SheetDescription class="sr-only">{{ t('book.quickView.description') }}</SheetDescription>
         <div class="flex flex-col h-full">
+          <div v-if="shelf" class="flex gap-2 px-5 pt-4 pr-12">
+            <button :disabled="!hasPrevious" class="rounded border px-3 py-1 text-xs disabled:opacity-40" @click="previousBook">이전 책</button>
+            <button :disabled="!hasNext" class="rounded border px-3 py-1 text-xs disabled:opacity-40" @click="nextBook">다음 책</button>
+          </div>
+          <p v-if="error || notFound" role="alert" class="p-5 text-sm text-destructive">
+            도서 정보를 불러올 수 없습니다. 접근 권한과 연결 상태를 확인하세요.
+          </p>
           <!-- Header: cover + title block -->
           <div class="p-5 pt-10 border-b shrink-0">
             <div v-if="loading" class="flex gap-4 items-start">
@@ -304,13 +332,20 @@ function handleDelete() {
             </div>
 
             <div v-else-if="detail" class="flex gap-4 items-start">
+              <div
+                v-if="shelf && showSpine"
+                class="h-60 w-16 shrink-0 rounded-sm bg-(--shelf-book-0) text-(--shelf-ink) p-4 text-sm [writing-mode:vertical-rl] shadow-xl"
+              >
+                {{ detail.title }}
+              </div>
               <!-- Cover -->
               <BookCoverSurface
+                v-show="!shelf || !showSpine"
                 size="mini"
-                class="book-cover-surface--spine-fitted w-24 shrink-0 rounded overflow-hidden relative"
+                class="book-cover-surface--spine-fitted shrink-0 rounded overflow-hidden relative"
+                :class="[shelf ? 'w-28 sm:w-48' : 'w-24', detail.coverSource && !coverFailed ? 'cursor-zoom-in' : '']"
                 :disable-spine="isPrimaryAudio"
                 :is-comic="isPrimaryComic"
-                :class="detail.coverSource && !coverFailed ? 'cursor-zoom-in' : ''"
                 :style="{ aspectRatio: quickViewCoverAspectRatio }"
                 @click="handleCoverClick"
               >
@@ -333,7 +368,10 @@ function handleDelete() {
 
               <!-- Info -->
               <div class="flex-1 min-w-0 pr-2">
-                <h2 class="text-sm font-bold leading-snug line-clamp-3">
+                <button v-if="shelf" class="mb-3 rounded-md border px-3 py-1 text-xs hover:bg-muted" :aria-pressed="showSpine" @click="toggleSpine">
+                  {{ showSpine ? '표지 보기' : '책등 보기' }}
+                </button>
+                <h2 :class="shelf ? 'text-xl sm:text-2xl font-bold leading-snug' : 'text-sm font-bold leading-snug line-clamp-3'">
                   {{ detail.title ?? t('book.untitled') }}
                 </h2>
                 <p v-if="detail.subtitle" class="text-xs text-muted-foreground mt-0.5 line-clamp-2">

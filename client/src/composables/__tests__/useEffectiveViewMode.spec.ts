@@ -53,3 +53,20 @@ describe('useEffectiveViewMode', () => {
     expect(effectiveViewMode.value).toBe('list')
   })
 })
+
+describe('shelf compatibility', () => {
+  it('falls back without destroying the saved preference on unsupported screens', () => {
+    const { viewMode, effectiveViewMode } = useEffectiveViewMode()
+    viewMode.value = 'shelf'
+    expect(effectiveViewMode.value).toBe('grid')
+    expect(viewMode.value).toBe('shelf')
+  })
+  it('supports the mobile and desktop shelf when explicitly enabled', () => {
+    breakpointMd.value = false
+    const { viewMode, effectiveViewMode } = useEffectiveViewMode(true)
+    viewMode.value = 'shelf'
+    expect(effectiveViewMode.value).toBe('shelf')
+    viewMode.value = 'grid'
+    expect(effectiveViewMode.value).toBe('grid')
+  })
+})
