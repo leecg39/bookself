@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { BookCard } from '@bookorbit/types'
 import { shelfVisual } from '../lib/shelf-layout'
 import BookCoverArtwork from '@/features/book/components/BookCoverArtwork.vue'
 import { useCoverVersions } from '@/features/book/composables/useCoverVersions'
+const { t } = useI18n()
 const props = defineProps<{ book: BookCard; index: number; selected?: boolean; selectionMode?: boolean }>()
 const emit = defineEmits<{ open: [book: BookCard]; select: [id: number, event: MouseEvent] }>()
 const { coverUrl } = useCoverVersions()
@@ -13,7 +15,7 @@ const style = computed(() => ({
   '--spine-width': `${visual.value.width}px`,
   backgroundColor: visual.value.color,
 }))
-const title = computed(() => props.book.title || '제목 미확인')
+const title = computed(() => props.book.title || t('book.untitled'))
 const authors = computed(() => props.book.authors.join(', '))
 function handleClick(event: MouseEvent) {
   if (props.selectionMode) emit('select', props.book.id, event)
@@ -50,12 +52,12 @@ function handleClick(event: MouseEvent) {
         />
       </span>
       <span class="sm:hidden line-clamp-2 px-1 pt-2 text-xs font-semibold">{{ title }}</span>
-      <span class="mb-3 mt-2 w-full truncate border-t border-current/30 px-1 pt-2 text-[10px]">{{ authors || '저자 미확인' }}</span>
+      <span class="mb-3 mt-2 w-full truncate border-t border-current/30 px-1 pt-2 text-[10px]">{{ authors || t('bookshelf.unknownAuthor') }}</span>
     </span>
     <span
       v-if="book.readingProgress !== null && book.readingProgress > 0"
       class="absolute bottom-0 left-1 right-1 h-1 bg-muted"
-      :aria-label="`독서 진행 ${Math.round(book.readingProgress)}%`"
+      :aria-label="t('bookshelf.progress', { percent: Math.round(book.readingProgress) })"
       ><span class="block h-full bg-primary" :style="{ width: `${Math.max(0, Math.min(100, book.readingProgress))}%` }"
     /></span>
   </button>

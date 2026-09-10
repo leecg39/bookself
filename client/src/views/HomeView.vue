@@ -652,13 +652,13 @@ defineOptions({ name: 'HomeView' })
         <template #toolbar>
           <button
             type="button"
-            aria-label="책장 보기"
+            :aria-label="t('bookshelf.view')"
             :aria-pressed="effectiveViewMode === 'shelf'"
             class="rounded-lg px-3 py-1.5 text-xs font-semibold hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-primary"
             :class="effectiveViewMode === 'shelf' ? 'bg-primary/10 text-primary' : 'text-muted-foreground'"
             @click="selectShelfMode"
           >
-            책장
+            {{ t('bookshelf.shelf') }}
           </button>
           <div v-if="effectiveViewMode !== 'table'" class="hidden sm:flex items-center gap-1">
             <Popover>

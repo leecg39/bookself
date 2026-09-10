@@ -27,7 +27,7 @@ export const SUPPORTED_LOCALES = [
 ] as const;
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 
-export const DEFAULT_LOCALE: Locale = "en";
+export const DEFAULT_LOCALE: Locale = "ko";
 
 /** Native display names for each supported locale, shown in the language picker. */
 export const LOCALE_LABELS: Record<Locale, string> = {

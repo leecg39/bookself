@@ -2,6 +2,7 @@ import type { WritableComputedRef } from 'vue'
 import { createI18n } from 'vue-i18n'
 import { DEFAULT_LOCALE, LOCALE_DIRECTIONS, type Locale } from '@bookorbit/types'
 import en from '@/locales/en.json'
+import ko from '@/locales/ko.json'
 import { compileIcuCatalog } from './icu'
 
 export type MessageSchema = typeof en
@@ -12,13 +13,13 @@ type LocaleMessageTree = { [key: string]: string | LocaleMessageTree }
 export const i18n = createI18n({
   legacy: false,
   locale: DEFAULT_LOCALE,
-  fallbackLocale: DEFAULT_LOCALE,
+  fallbackLocale: 'en',
   missingWarn: false,
   fallbackWarn: false,
-  messages: { en: compileIcuCatalog(en, DEFAULT_LOCALE) },
+  messages: { en: compileIcuCatalog(en, 'en'), ko: compileIcuCatalog(ko, 'ko') },
 })
 
-const loaded = new Set<Locale>([DEFAULT_LOCALE])
+const loaded = new Set<Locale>(['en', 'ko'])
 
 export async function loadLocaleMessages(locale: Locale): Promise<void> {
   if (loaded.has(locale)) return

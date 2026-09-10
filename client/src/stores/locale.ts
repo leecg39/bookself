@@ -49,12 +49,6 @@ export function detectInitialLocale(): Locale {
   const stored = storage.get<string>(STORAGE_KEY, '')
   if (isSupportedLocale(stored)) return stored
 
-  if (typeof navigator !== 'undefined') {
-    const candidates = Array.isArray(navigator.languages) && navigator.languages.length > 0 ? navigator.languages : [navigator.language]
-    const detected = matchSupportedLocale(candidates.filter((candidate): candidate is string => typeof candidate === 'string'))
-    if (detected) return detected
-  }
-
   return DEFAULT_LOCALE
 }
 

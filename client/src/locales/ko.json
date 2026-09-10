@@ -1,24 +1,24 @@
 {
   "common": {
-    "resetSortAria": "정렬 기본값으로 재설정",
+    "resetSortAria": "기본 정렬로 초기화",
     "save": "저장",
     "cancel": "취소",
     "delete": "삭제",
     "edit": "편집",
     "close": "닫기",
     "confirm": "확인",
-    "loading": "불러오는 중",
+    "loading": "불러오는 중...",
     "search": "검색",
-    "back": "후방",
+    "back": "뒤로",
     "next": "다음",
     "previous": "이전",
     "retry": "다시 시도",
-    "yes": "네",
-    "no": "아니오"
+    "yes": "예",
+    "no": "아니요"
   },
   "settings": {
     "privacySharing": {
-      "title": "프라이버시 & 공유",
+      "title": "개인정보 및 공유",
       "subtitle": "관리자의 개인 식별된 독서 활동 요약 열람을 허용할지 제어합니다.",
       "levelLegend": "독서 인사이트 공유 수준",
       "current": "현재 설정",
@@ -72,7 +72,7 @@
       },
       "durationMinutes": "{count, plural, one {#분} other {#분}}",
       "durationHours": "{count, plural, one {#시간} other {#시간}}",
-      "unknownTitle": "제목 없는 책",
+      "unknownTitle": "제목 없는 도서",
       "errors": {
         "load": "공유 설정 불러오기 실패.",
         "save": "공유 설정 업데이트 실패.",
@@ -87,12 +87,12 @@
         "loadError": "선택한 언어 불러오기 실패",
         "saveError": "언어 설정 저장 실패"
       },
-      "pageTitle": "디스플레이",
+      "pageTitle": "화면",
       "pageSubtitle": "테마, 표지, 레이아웃 및 라이브러리 표시 방법을 제어합니다.",
       "mobileSummary": "테마: {theme} • 강조: {accent} • 배경: {background}",
       "themeMode": {
-        "light": "라이트",
-        "dark": "다크",
+        "light": "밝게",
+        "dark": "어둡게",
         "system": "시스템"
       },
       "theme": {
@@ -128,7 +128,24 @@
           "pattern": {
             "label": "배경 패턴",
             "hint": "책 그리드 뒤에 표시되는 패턴"
-          }
+          },
+          "title": "도서관 배경"
+        },
+        "surfaceBrightness": {
+          "label": "표면 밝기",
+          "reset": "초기화"
+        },
+        "accentColor": {
+          "label": "강조색"
+        },
+        "cornerRadius": {
+          "label": "모서리 모양"
+        },
+        "backgroundGroups": {
+          "fundamental": "기본",
+          "structural": "구조",
+          "ambient": "분위기",
+          "refractive": "빛 굴절"
         }
       },
       "storage": {
@@ -163,10 +180,3013 @@
             "label": "블러 핏"
           },
           "fillCrop": {
-            "hint": "가장자리 잘라내기"
+            "hint": "가장자리 잘라내기",
+            "label": "카드에 채우기"
+          },
+          "title": "표지 표시 방식",
+          "naturalBottom": {
+            "label": "원래 비율로 아래 정렬"
           }
+        },
+        "spine": {
+          "off": {
+            "label": "꺼짐"
+          },
+          "title": "책등 효과",
+          "subtle": {
+            "label": "은은하게"
+          },
+          "strong": {
+            "label": "강하게"
+          }
+        },
+        "detailCoverTint": {
+          "off": {
+            "label": "꺼짐"
+          },
+          "title": "도서 상세 화면 표지 색조",
+          "single": {
+            "label": "단색"
+          },
+          "duotone": {
+            "label": "두 가지 색"
+          }
+        },
+        "shadow": {
+          "default": {
+            "label": "기본값"
+          },
+          "title": "표지 그림자 강도",
+          "strong": {
+            "label": "강하게"
+          }
+        },
+        "overlays": {
+          "rating": {
+            "label": "별점"
+          },
+          "readStatus": {
+            "label": "독서 상태"
+          },
+          "title": "카드 표시 정보",
+          "progressBar": {
+            "label": "진행 막대"
+          },
+          "format": {
+            "label": "파일 형식"
+          },
+          "seriesPosition": {
+            "label": "시리즈 번호"
+          },
+          "lockStatus": {
+            "label": "잠금 상태"
+          }
+        },
+        "showSpineOnComics": {
+          "label": "만화에 책등 표시"
+        }
+      },
+      "layout": {
+        "coverSize": "표지 크기",
+        "cardInfoMode": {
+          "off": "꺼짐",
+          "label": "카드 정보 표시 방식",
+          "onHover": "마우스를 올릴 때",
+          "belowCover": "표지 아래"
+        },
+        "labelField": {
+          "author": "저자",
+          "hidden": "숨김",
+          "bookTitle": "도서 제목",
+          "seriesTitle": "시리즈 제목",
+          "seriesTitlePosition": "시리즈 제목과 순서"
+        },
+        "authorGrid": {
+          "coverSize": {
+            "label": "표지 크기"
+          },
+          "coverShape": {
+            "label": "표지 모양"
+          },
+          "circle": "원형",
+          "square": "정사각형",
+          "title": "저자 격자"
+        },
+        "gridSpacing": "격자 간격",
+        "gridLayout": {
+          "title": "도서관 격자 배치"
+        },
+        "coverSizeBehavior": {
+          "label": "표지 크기 적용 방식",
+          "syncAll": "모든 보기에 동일 적용",
+          "perView": "보기별 크기"
+        },
+        "portraitCoverSize": {
+          "label": "세로 표지 크기"
+        },
+        "squareCoverSize": {
+          "label": "정사각형 표지 크기"
+        },
+        "portraitGridSpacing": {
+          "label": "세로 표지 간격"
+        },
+        "squareGridSpacing": {
+          "label": "정사각형 표지 간격"
+        },
+        "primaryCardLabel": {
+          "label": "카드 첫째 줄"
+        },
+        "secondaryCardLabel": {
+          "label": "카드 둘째 줄"
+        },
+        "seriesDisplay": {
+          "title": "시리즈 표시",
+          "collapsedCover": {
+            "label": "접힌 시리즈 표지"
+          },
+          "stack": "겹쳐 보기",
+          "mosaic": "모자이크",
+          "first": "첫 번째",
+          "latest": "최신",
+          "firstUnread": "첫 번째 읽지 않은 책"
+        },
+        "listTableViews": {
+          "title": "목록 및 표 보기"
+        },
+        "zebraStriping": {
+          "label": "행 배경 번갈아 표시"
+        }
+      },
+      "behavior": {
+        "title": "도서관 동작",
+        "thumbnailClicks": {
+          "label": "표지 클릭 동작",
+          "readFirst": "바로 읽기",
+          "openDetails": "상세 정보 열기"
+        },
+        "filterPreview": {
+          "label": "기본으로 필터 미리 보기 표시"
+        },
+        "collapseSeries": {
+          "label": "기본으로 시리즈 접기"
+        }
+      },
+      "icons": {
+        "sort": {
+          "name": "이름",
+          "newest": "최신순"
+        },
+        "clear": "지우기",
+        "deleteSelected": "선택 항목 삭제",
+        "namePlaceholder": "이름",
+        "rename": "이름 변경",
+        "title": "사용자 정의 아이콘",
+        "uploadIcons": "아이콘 업로드",
+        "searchPlaceholder": "아이콘 검색",
+        "loading": "아이콘 불러오는 중...",
+        "emptySearch": "검색에 해당하는 아이콘이 없습니다.",
+        "emptyNoIcons": "아직 업로드한 아이콘이 없습니다.",
+        "checkingUsage": "사용 현황 확인 중...",
+        "usedBy": "{count}곳에서 사용 중",
+        "notUsedYet": "아직 사용하지 않음",
+        "replace": "교체",
+        "toasts": {
+          "saved": "아이콘 저장 완료",
+          "updated": "아이콘 수정 완료",
+          "deleted": "아이콘 삭제 완료",
+          "bulkDeletePartial": "{deleted}개 삭제, {failed}개 실패"
+        },
+        "errors": {
+          "load": "아이콘을 불러오지 못했습니다",
+          "save": "아이콘을 저장하지 못했습니다",
+          "replace": "아이콘을 교체하지 못했습니다",
+          "delete": "아이콘을 삭제하지 못했습니다",
+          "bulkDelete": "아이콘을 삭제하지 못했습니다"
+        }
+      },
+      "tabs": {
+        "theme": "테마",
+        "book-covers": "책 표지",
+        "icons": "아이콘",
+        "layout": "배치",
+        "behavior": "동작",
+        "language": "언어"
+      }
+    },
+    "account": {
+      "title": "계정",
+      "tabs": {
+        "profile": "프로필",
+        "privacy": "개인정보 및 공유",
+        "notifications": "알림",
+        "restrictions": "제한 설정"
+      },
+      "feedback": {
+        "discard": "취소"
+      },
+      "profile": {
+        "username": "사용자 이름",
+        "fullName": "이름",
+        "email": "이메일",
+        "saving": "저장 중...",
+        "changePassword": "비밀번호 변경",
+        "accountTypeShared": "공유됨"
+      },
+      "avatar": {
+        "uploading": "업로드 중...",
+        "removeConfirm": {
+          "confirm": "제거"
+        }
+      },
+      "connectedAccounts": {
+        "redirecting": "이동 중...",
+        "unlinkDialog": {
+          "currentPassword": "현재 비밀번호"
+        }
+      },
+      "groups": {
+        "profile": "프로필",
+        "preferences": "환경 설정"
+      }
+    },
+    "magicLinks": {
+      "title": "간편 로그인 링크",
+      "paused": "잠시 중단",
+      "pause": "일시 정지",
+      "columns": {
+        "account": "계정",
+        "created": "생성됨",
+        "status": "상태",
+        "actions": "작업"
+      },
+      "createDialog": {
+        "create": "만들기"
+      }
+    },
+    "oidc": {
+      "providers": "제공자",
+      "enabled": "활성화",
+      "disabled": "비활성화",
+      "form": {
+        "status": "상태",
+        "connection": "연결",
+        "redirecting": "이동 중...",
+        "saving": "저장 중...",
+        "deleting": "삭제 중..."
+      },
+      "test": {
+        "details": "상세 정보"
+      },
+      "groupMappings": {
+        "add": "추가"
+      }
+    },
+    "admin": {
+      "title": "관리자",
+      "system": {
+        "title": "시스템"
+      },
+      "maintenance": {
+        "title": "유지 관리",
+        "importGroup": "가져오기",
+        "achievementsGroup": "독서 성취",
+        "failed": "실패",
+        "save": "저장"
+      },
+      "migration": {
+        "progress": "진행률",
+        "badgeSaved": "저장됨",
+        "badgeCompleted": "완료",
+        "badgeRunning": "실행 중",
+        "badgeFailed": "실패",
+        "host": "호스트",
+        "port": "포트",
+        "user": "사용자",
+        "password": "비밀번호",
+        "database": "데이터베이스",
+        "unknown": "알 수 없음",
+        "refresh": "새로고침",
+        "remove": "제거",
+        "retry": "다시 시도",
+        "stageCompleted": "완료",
+        "notStarted": "읽기 전",
+        "booksCard": "도서",
+        "bookmarksLabel": "책갈피",
+        "annotationsLabel": "메모와 하이라이트"
+      },
+      "libraries": {
+        "title": "도서관",
+        "scan": "스캔",
+        "editLibrary": "도서관 편집",
+        "deleteLibrary": "도서관 삭제",
+        "emptyTitle": "아직 도서관이 없습니다",
+        "deleting": "삭제 중..."
+      },
+      "authorEnrichment": {
+        "saving": "저장 중...",
+        "fields": {
+          "genres": "장르"
+        }
+      },
+      "scoreWeights": {
+        "resetToDefaultsButton": "기본값으로 초기화",
+        "reset": "초기화"
+      },
+      "tabs": {
+        "users": "사용자",
+        "account-activity": "계정 활동",
+        "magic-links": "간편 로그인 링크",
+        "server-fonts": "서버 글꼴",
+        "oidc": "OIDC / 통합 로그인"
+      },
+      "serverFonts": {
+        "title": "서버 글꼴",
+        "listLabel": "서버 글꼴"
+      }
+    },
+    "common": {
+      "nav": {
+        "libraries": "도서관",
+        "display": "화면",
+        "reader": "뷰어",
+        "metadata": "메타데이터",
+        "email": "이메일",
+        "integrations": "외부 서비스 연동",
+        "admin": "관리자",
+        "system": "시스템",
+        "account": "계정",
+        "opds": "OPDS 카탈로그",
+        "kobo": "Kobo",
+        "koreader": "KOReader",
+        "hardcover": "Hardcover"
+      }
+    },
+    "integrations": {
+      "title": "외부 서비스 연동",
+      "tabs": {
+        "hardcover": "Hardcover",
+        "readwise": "Readwise",
+        "storygraph": "StoryGraph"
+      },
+      "providerSubtitles": {
+        "readwise": "하이라이트를 Readwise에 자동으로 전송합니다.",
+        "storygraph": "독서 진행률과 상태를 The StoryGraph와 동기화합니다."
+      }
+    },
+    "metadata": {
+      "title": "메타데이터",
+      "fields": {
+        "title": "제목",
+        "subtitle": "부제",
+        "description": "설명",
+        "authors": "저자",
+        "publisher": "출판사",
+        "language": "언어",
+        "pageCount": "쪽수",
+        "genres": "장르",
+        "narrators": "낭독자",
+        "duration": "재생 시간",
+        "cover": "표지",
+        "abridged": "축약판"
+      },
+      "autoFetch": {
+        "saving": "저장 중..."
+      },
+      "providers": {
+        "enabled": "활성화",
+        "fields": {
+          "language": "언어"
+        },
+        "badge": {
+          "ready": "준비됨"
+        }
+      },
+      "fieldRules": {
+        "reset": "초기화",
+        "groups": {
+          "series": "시리즈",
+          "audiobook": "오디오북"
+        },
+        "table": {
+          "status": "상태"
+        },
+        "field": {
+          "custom": "사용자 지정",
+          "default": "기본값"
+        },
+        "sheet": {
+          "providers": "제공자",
+          "done": "완료"
+        }
+      },
+      "genreBlocklist": {
+        "add": "추가",
+        "saving": "저장 중"
+      },
+      "customFields": {
+        "restore": "복원",
+        "preview": "미리 보기",
+        "selectAll": "모두 선택",
+        "clear": "지우기",
+        "allLibraries": "전체 도서관"
+      },
+      "tabs": {
+        "providers": "제공자",
+        "field-rules": "필드 규칙",
+        "custom-fields": "사용자 정의 필드",
+        "genre-blocklist": "제외 장르",
+        "score": "점수",
+        "auto-fetch": "도서",
+        "authors": "저자"
+      },
+      "tabTitles": {
+        "providers": "제공자",
+        "field-rules": "필드별 규칙",
+        "custom-fields": "사용자 정의 메타데이터",
+        "genre-blocklist": "제외 장르",
+        "score": "신뢰도 점수",
+        "auto-fetch": "도서 정보 자동 수집",
+        "authors": "저자 정보 자동 수집"
+      },
+      "tabSubtitles": {
+        "providers": "외부 메타데이터 제공자와 인증 정보를 설정합니다.",
+        "field-rules": "각 메타데이터 필드의 제공자와 병합 규칙을 설정합니다.",
+        "custom-fields": "사용자 정의 필드와 사용할 도서관을 설정합니다.",
+        "score": "메타데이터 필드별 가중치로 수집 결과의 신뢰도를 계산합니다.",
+        "auto-fetch": "새 도서를 추가하면 표지, 설명과 상세 정보를 자동으로 수집합니다.",
+        "authors": "새 저자가 추가되면 약력과 프로필 사진을 자동으로 수집합니다.",
+        "genre-blocklist": "제공자에게서 수집한 불필요한 장르가 도서에 저장되지 않도록 설정합니다."
+      }
+    },
+    "reader": {
+      "resetToDefaults": "기본값으로 초기화",
+      "all": {
+        "title": "뷰어"
+      },
+      "general": {
+        "title": "읽는 중",
+        "active": "활성"
+      },
+      "ebook": {
+        "title": "전자책 뷰어",
+        "layout": "배치",
+        "singlePage": "한 쪽씩",
+        "theme": "테마",
+        "fontSize": "글자 크기",
+        "lineHeight": "줄 간격",
+        "advanced": "고급",
+        "readingFlow": "읽기 방식",
+        "bookDefault": "도서 기본값",
+        "columns": "열 수",
+        "font": "글꼴",
+        "justify": "양쪽 정렬",
+        "hyphenation": "단어 나눔",
+        "columnGap": "열 간격"
+      },
+      "pdf": {
+        "title": "PDF 뷰어",
+        "layout": "배치",
+        "page": "페이지",
+        "spreadNone": "없음",
+        "custom": "사용자 지정"
+      },
+      "comics": {
+        "title": "만화 뷰어",
+        "readingMode": "읽기 모드",
+        "fitPage": "페이지",
+        "fitWidth": "너비",
+        "fitHeight": "높이",
+        "readingDirection": "읽기 방향",
+        "widePageAuto": "자동",
+        "widePageDisable": "사용 안 함",
+        "off": "꺼짐",
+        "on": "켜짐",
+        "display": "화면",
+        "bgGray": "회색"
+      },
+      "audio": {
+        "title": "오디오북 플레이어"
+      },
+      "fonts": {
+        "title": "글꼴",
+        "uploading": "업로드 중...",
+        "weightLight": "밝게",
+        "weightMedium": "보통",
+        "styleItalic": "기울임",
+        "weightBold": "굵게"
+      },
+      "bookDock": {
+        "title": "도서 보관함",
+        "metadata": "메타데이터",
+        "destinationLibrary": "대상 도서관",
+        "destinationFolder": "대상 폴더"
+      },
+      "fileNaming": {
+        "title": "파일 이름 규칙",
+        "copy": "복사",
+        "badgeCustom": "사용자 지정",
+        "badgeDefault": "기본값",
+        "tokenPublisher": "출판사",
+        "tokenLanguage": "언어",
+        "tokenLibrary": "도서관 이름",
+        "tokenTitle": "도서 제목",
+        "tokenIsbn": "ISBN-13"
+      },
+      "kobo": {
+        "title": "Kobo 동기화",
+        "copy": "복사",
+        "saving": "저장 중...",
+        "activity": {
+          "none": "없음",
+          "unknown": "알 수 없음",
+          "outcome": {
+            "failed": "실패",
+            "pending": "대기 중",
+            "completed": "완료",
+            "updated": "수정됨"
+          },
+          "filterAll": "전체",
+          "refresh": "새로고침",
+          "error": "오류",
+          "loading": "불러오는 중..."
+        },
+        "tabs": {
+          "syncSettings": "동기화 설정",
+          "activityLog": "활동 기록"
+        },
+        "loadFailed": "불러오기 실패"
+      },
+      "koreader": {
+        "title": "KOReader 동기화",
+        "tabs": {
+          "fileNaming": "파일 이름 규칙",
+          "sync": "동기화 설정"
+        },
+        "fileNaming": {
+          "preview": "미리 보기"
+        },
+        "unknown": "알 수 없음",
+        "username": "사용자 이름",
+        "password": "비밀번호",
+        "changeCredentials": {
+          "newPassword": "새 비밀번호",
+          "saving": "저장 중..."
+        },
+        "create": "만들기",
+        "refresh": "새로고침",
+        "copied": "복사됨",
+        "highlights": "하이라이트",
+        "pluginStep4Prefix": "열기",
+        "hashLinks": {
+          "refresh": "새로고침",
+          "unknownAuthor": "저자 미상",
+          "modal": {
+            "searching": "검색 중...",
+            "untitledBook": "제목 없는 도서",
+            "select": "선택",
+            "loadMore": "더 불러오기",
+            "saving": "저장 중...",
+            "noBooksFound": "도서를 찾을 수 없습니다."
+          },
+          "searching": "검색 중...",
+          "untitledBook": "제목 없는 도서",
+          "select": "선택",
+          "loadMore": "더 불러오기",
+          "loadingMore": "불러오는 중...",
+          "saving": "저장 중...",
+          "noBooksFound": "도서를 찾을 수 없습니다.",
+          "link": "링크"
+        },
+        "remove": "제거",
+        "restore": "복원",
+        "deletingSyncedData": "삭제 중..."
+      },
+      "opds": {
+        "copy": "복사",
+        "server": "서버",
+        "endpoint": "접속 주소",
+        "add": "추가",
+        "username": "사용자 이름",
+        "usernameLabel": "사용자 이름",
+        "password": "비밀번호",
+        "sortLabel": "정렬",
+        "create": "만들기",
+        "loadFailed": "불러오기 실패",
+        "sortRecent": "최근 추가한 책"
+      },
+      "tabs": {
+        "general": "일반",
+        "ebook": "전자책",
+        "comics": "만화",
+        "audio": "오디오북",
+        "fonts": "글꼴",
+        "pdf": "PDF"
+      }
+    },
+    "system": {
+      "tabs": {
+        "file-naming": "파일 이름 규칙",
+        "book-dock": "도서 보관함",
+        "maintenance": "유지 관리",
+        "audit-log": "감사 기록"
+      }
+    },
+    "nav": {
+      "title": "설정",
+      "ariaLabel": "설정 항목",
+      "searchPlaceholder": "설정 검색",
+      "clearSearch": "검색 지우기",
+      "noResults": "{query}에 해당하는 설정이 없습니다.",
+      "shortcutHint": "Cmd K를 눌러 설정을 빠르게 검색하세요",
+      "groups": {
+        "you": "내 설정",
+        "library": "도서관",
+        "devices": "기기 및 동기화",
+        "server": "서버"
+      },
+      "backToApp": "도서관으로 돌아가기",
+      "descriptions": {
+        "profile": "이름, 이메일, 비밀번호와 로그인 세션을 관리합니다.",
+        "appearanceTheme": "테마, 강조색, 배경과 모서리 모양을 설정합니다.",
+        "appearanceBookCovers": "표지 그림자, 책등 효과와 기본 표지를 설정합니다.",
+        "appearanceIcons": "앱에서 사용할 아이콘 스타일을 선택합니다.",
+        "appearanceLayout": "기본 도서관 보기, 밀도와 간격을 설정합니다.",
+        "appearanceBehavior": "도서를 탐색하고 정렬할 때의 동작을 설정합니다.",
+        "appearanceLanguage": "화면 언어와 지역별 표시 형식을 설정합니다.",
+        "readerEbook": "전자책의 글꼴, 간격과 페이지 동작을 설정합니다.",
+        "readerPdf": "PDF 표시 방식, 확대와 페이지 맞춤을 설정합니다.",
+        "readerComics": "만화의 읽기 방향과 펼침 방식을 설정합니다.",
+        "readerAudio": "재생 속도, 건너뛰기 간격과 취침 타이머를 설정합니다.",
+        "readerFonts": "독서에 사용할 글꼴을 관리합니다.",
+        "readerGeneral": "모든 읽기 모드에 적용할 기본값을 설정합니다.",
+        "notifications": "받을 알림의 종류와 전달 방법을 설정합니다.",
+        "privacy": "독서 통계, 공유 링크와 활동 공개 범위를 관리합니다.",
+        "restrictions": "이 계정의 연령 등급과 숨길 콘텐츠를 설정합니다.",
+        "libraries": "스캔 경로, 감시 폴더와 도서 등록 규칙을 관리합니다.",
+        "fileNaming": "저장할 파일의 폴더와 이름 규칙을 설정합니다.",
+        "maintenance": "다시 스캔, 중복 정리, 누락 파일과 캐시를 관리합니다.",
+        "kobo": "동기화 주소, 스토어 프록시와 책장 연결을 설정합니다.",
+        "koreader": "독서 진행률 동기화와 문서 연결을 설정합니다.",
+        "opds": "외부 독서 앱을 위한 도서 목록을 제공합니다.",
+        "email": "SMTP 발송과 기기로 보낼 이메일 주소를 설정합니다.",
+        "hardcover": "Hardcover와 독서 상태 및 리뷰를 동기화합니다.",
+        "users": "계정, 역할, 권한과 초대를 관리합니다.",
+        "accountActivity": "사용자별 독서 활동과 로그인 세션을 확인합니다.",
+        "magicLinks": "비밀번호 없이 공유하거나 로그인하는 링크를 관리합니다.",
+        "oidc": "통합 로그인 제공자와 계정 연결 규칙을 설정합니다.",
+        "serverFonts": "모든 사용자가 사용할 서버 글꼴을 관리합니다.",
+        "bookDock": "도서 화면에 표시할 빠른 작업을 설정합니다.",
+        "auditLog": "누가 언제 무엇을 변경했는지 확인합니다."
+      }
+    }
+  },
+  "achievements": {
+    "title": "독서 성취",
+    "tryAgain": "다시 시도",
+    "filter": {
+      "all": "전체"
+    }
+  },
+  "adminFeature": {
+    "accountActivity": {
+      "title": "계정 활동",
+      "states": {
+        "disabled": "비활성화"
+      },
+      "filters": {
+        "name": "이름",
+        "apply": "적용",
+        "clear": "지우기"
+      },
+      "columns": {
+        "user": "사용자",
+        "created": "생성됨"
+      }
+    },
+    "sharedInsights": {
+      "metrics": {
+        "sessions": "세션"
+      },
+      "sourceNames": {
+        "unknown": "알 수 없음",
+        "manual": "수동"
+      },
+      "formats": "형식",
+      "genres": "장르",
+      "recentBooks": "최근 읽은 책",
+      "unknownTitle": "제목 없는 도서"
+    },
+    "resetLink": {
+      "copy": "복사"
+    },
+    "userForm": {
+      "sharedBadge": "공유됨",
+      "active": "활성",
+      "username": "사용자 이름",
+      "fullName": "이름",
+      "email": "이메일",
+      "permissions": "권한",
+      "presetAdmin": "관리자",
+      "permissionGroups": {
+        "email": "이메일",
+        "administration": "관리",
+        "notifications": "알림",
+        "restrictions": "제한 설정"
+      },
+      "contentRestrictions": "콘텐츠 제한",
+      "remove": "제거",
+      "saving": "저장 중...",
+      "tabs": {
+        "general": "일반",
+        "access": "접근 권한",
+        "restrictions": "제한 설정"
+      }
+    },
+    "usersPage": {
+      "usersTitle": "사용자",
+      "columns": {
+        "name": "이름",
+        "username": "사용자 이름",
+        "email": "이메일",
+        "status": "상태",
+        "actions": "작업"
+      },
+      "adminBadge": "관리자",
+      "statusActive": "활성",
+      "statusInactive": "비활성",
+      "lockedBadge": "잠김",
+      "deleteUserAction": "사용자 삭제",
+      "defaultLibraryAccess": {
+        "saving": "저장 중..."
+      },
+      "filters": {
+        "apply": "적용",
+        "clear": "지우기",
+        "active": "활성",
+        "inactive": "비활성",
+        "newest": "최신순",
+        "oldest": "오래된 순"
+      },
+      "errors": {
+        "load": "불러오기 실패"
+      },
+      "deleting": "삭제 중..."
+    }
+  },
+  "annotations": {
+    "styles": {
+      "highlight": "하이라이트",
+      "underline": "밑줄"
+    },
+    "combobox": {
+      "allBooks": "전체 도서",
+      "searching": "검색 중...",
+      "noBooksFound": "도서를 찾을 수 없습니다"
+    },
+    "bulk": {
+      "clear": "지우기"
+    },
+    "pagination": {
+      "previousPage": "이전 페이지",
+      "nextPage": "다음 페이지"
+    },
+    "sync": {
+      "status": {
+        "failed": "실패",
+        "pending": "대기 중"
+      }
+    },
+    "toolbar": {
+      "filters": "필터"
+    },
+    "listItem": {
+      "restore": "복원",
+      "editNote": "메모 편집",
+      "addNote": "메모 추가",
+      "copied": "복사됨",
+      "copyText": "텍스트 복사",
+      "trash": "휴지통",
+      "saving": "저장 중"
+    },
+    "hub": {
+      "title": "메모와 하이라이트",
+      "export": "내보내기",
+      "bulkRestore": "복원",
+      "tabs": {
+        "highlights": "하이라이트",
+        "trash": "휴지통"
+      },
+      "notesOnly": "메모만",
+      "bulkTrash": "휴지통",
+      "source": "출처",
+      "empty": {
+        "resetFilters": "필터 초기화"
+      }
+    }
+  },
+  "audit": {
+    "pageTitle": "감사 기록",
+    "filters": "필터",
+    "clear": "지우기",
+    "showMore": "더 보기",
+    "showLess": "접기",
+    "details": "상세 정보",
+    "today": "오늘",
+    "untitledBook": "제목 없음",
+    "filterLabels": {
+      "from": "시작",
+      "to": "종료"
+    },
+    "filterPlaceholders": {
+      "actor": "사용자 이름"
+    },
+    "columns": {
+      "user": "사용자",
+      "description": "설명"
+    },
+    "categories": {
+      "books": "도서",
+      "users": "사용자",
+      "libraries": "도서관",
+      "collections": "컬렉션",
+      "integrations": "외부 서비스 연동",
+      "settings": "설정"
+    },
+    "resourceLabels": {
+      "User": "사용자",
+      "Library": "도서관",
+      "Book": "도서",
+      "Collection": "컬렉션",
+      "SmartScope": "스마트 책장",
+      "Author": "저자",
+      "Genre": "장르",
+      "Narrator": "낭독자",
+      "Publisher": "출판사",
+      "Language": "언어",
+      "Series": "시리즈"
+    },
+    "actionLabels": {
+      "AuthLogin": "로그인",
+      "AuthLogout": "로그아웃",
+      "AuthPasswordChange": "비밀번호 변경",
+      "UserDelete": "사용자 삭제",
+      "LibraryDelete": "도서관 삭제",
+      "BookDelete": "도서 삭제",
+      "CollectionCreate": "컬렉션 만들기"
+    }
+  },
+  "auth": {
+    "backToSignIn": "로그인으로 돌아가기",
+    "themePicker": {
+      "switchToLight": "밝은 테마로 전환",
+      "switchToDark": "어두운 테마로 전환",
+      "changeRadius": "모서리 모양 변경",
+      "changeBackground": "배경 변경",
+      "changeAccent": "강조색 변경"
+    },
+    "fields": {
+      "username": "사용자 이름",
+      "password": "비밀번호",
+      "email": "이메일",
+      "emailAddress": "이메일 주소",
+      "fullName": "이름",
+      "newPassword": "새 비밀번호",
+      "confirmPassword": "비밀번호 확인",
+      "confirmNewPassword": "새 비밀번호 확인",
+      "currentPassword": "현재 비밀번호",
+      "passwordHint": "대문자, 소문자, 숫자를 포함한 8자 이상"
+    },
+    "errors": {
+      "generic": "오류가 발생했습니다. 다시 시도해 주세요.",
+      "passwordsDoNotMatch": "비밀번호가 일치하지 않습니다"
+    },
+    "login": {
+      "subtitle": "계정에 로그인하세요",
+      "signIn": "로그인",
+      "signingIn": "로그인 중...",
+      "orDivider": "또는",
+      "forgotPassword": "비밀번호를 잊으셨나요?",
+      "noAccount": "계정이 없으신가요?",
+      "signUp": "회원가입",
+      "errors": {
+        "invalidCredentials": "사용자 이름 또는 비밀번호가 올바르지 않습니다",
+        "tooManyAttempts": "로그인 시도가 너무 많습니다. 잠시 후 다시 시도하세요.",
+        "accountLocked": "비밀번호는 맞지만 로그인 실패가 누적되어 계정이 잠겼습니다. {minutes, plural, other {#분}} 후 다시 시도하거나 비밀번호를 재설정하여 잠금을 해제하세요."
+      },
+      "registeredNotice": "계정이 생성되었습니다. 로그인하세요. 도서관에 접근하려면 관리자의 권한 부여가 필요합니다."
+    },
+    "oidc": {
+      "loginFailed": "OIDC 로그인 실패",
+      "redirecting": "이동 중...",
+      "signInWith": "{provider} 계정으로 로그인",
+      "completingSignIn": "로그인 완료 중...",
+      "tryAgain": "다시 시도",
+      "errors": {
+        "stateExpired": "로그인 세션이 만료되었습니다. 다시 로그인하세요.",
+        "tokenExchangeFailed": "외부 계정으로 로그인하지 못했습니다. 다시 시도하거나 관리자에게 문의하세요.",
+        "userNotProvisioned": "계정이 아직 설정되지 않았습니다. 관리자에게 접근 권한을 요청하세요.",
+        "userInactive": "계정이 비활성화되었습니다. 관리자에게 문의하세요.",
+        "providerError": "로그인 제공자에서 오류가 발생했습니다. 다시 시도하세요.",
+        "missingCodeOrState": "인증 코드 또는 상태 값이 없습니다"
+      },
+      "providerErrors": {
+        "accessDenied": "로그인 제공자가 접근을 거부했습니다.",
+        "loginRequired": "인증이 필요합니다. 다시 로그인하세요.",
+        "interactionRequired": "추가 인증 절차가 필요합니다."
+      }
+    },
+    "forgotPassword": {
+      "subtitle": "비밀번호를 재설정하세요",
+      "sending": "보내는 중...",
+      "sendResetLink": "재설정 링크 보내기",
+      "submitted": "해당 이메일로 등록된 계정이 있으면 재설정 링크가 전송됩니다. 받은 편지함을 확인하세요.",
+      "errors": {
+        "emailUnavailable": "이메일로 비밀번호를 재설정할 수 없습니다. 관리자에게 문의하세요."
+      }
+    },
+    "resetPassword": {
+      "subtitle": "새 비밀번호를 설정하세요",
+      "saving": "저장 중...",
+      "setNewPassword": "새 비밀번호 설정",
+      "errors": {
+        "invalidLink": "잘못된 재설정 링크입니다. 새 링크를 요청하세요.",
+        "invalidOrExpired": "재설정 링크가 잘못되었거나 만료되었습니다. 새 링크를 요청하세요."
+      }
+    },
+    "register": {
+      "title": "계정 만들기",
+      "subtitle": "회원가입하고 시작하세요.",
+      "createAccount": "계정 만들기",
+      "creatingAccount": "계정 생성 중...",
+      "haveAccount": "이미 계정이 있으신가요?",
+      "signIn": "로그인",
+      "errors": {
+        "failed": "계정을 만들지 못했습니다",
+        "closed": "이 서버에서는 직접 회원가입할 수 없습니다.",
+        "taken": "이미 사용 중인 사용자 이름 또는 이메일입니다.",
+        "invalid": "입력한 내용을 확인하고 다시 시도하세요.",
+        "tooManyAttempts": "시도가 너무 많습니다. 잠시 후 다시 시도하세요.",
+        "username": {
+          "unsafeCharacters": "사용자 이름에 숨김 문자나 텍스트 방향 문자를 사용할 수 없습니다.",
+          "untrimmed": "사용자 이름의 시작과 끝에 공백을 사용할 수 없습니다."
+        },
+        "name": {
+          "unsafeCharacters": "이름에 숨김 문자나 텍스트 방향 문자를 사용할 수 없습니다.",
+          "untrimmed": "이름의 시작과 끝에 공백을 사용할 수 없습니다."
+        }
+      }
+    },
+    "setup": {
+      "title": "초기 설정",
+      "subtitle": "첫 관리자 계정을 만드세요.",
+      "setupToken": "설정 토큰",
+      "setupTokenHint": "(운영 환경에서 필수)",
+      "creatingAccount": "계정 생성 중...",
+      "createAccount": "관리자 계정 만들기",
+      "errors": {
+        "failed": "초기 설정을 완료하지 못했습니다"
+      }
+    },
+    "changePassword": {
+      "title": "비밀번호 변경",
+      "saving": "저장 중...",
+      "forcedNotice": "계속하려면 새 비밀번호를 설정하세요.",
+      "errors": {
+        "failed": "비밀번호를 변경하지 못했습니다"
+      }
+    },
+    "magicLink": {
+      "signingIn": "로그인 중...",
+      "loginFailed": "로그인 실패",
+      "goToLogin": "로그인으로 이동",
+      "errors": {
+        "noToken": "토큰이 없습니다"
+      }
+    }
+  },
+  "author": {
+    "card": {
+      "refreshMetadata": "메타데이터 새로고침"
+    },
+    "header": {
+      "actions": "작업",
+      "refreshMetadata": "메타데이터 새로고침",
+      "showLess": "접기",
+      "showMore": "더 보기",
+      "booksLabel": "도서",
+      "genres": "장르"
+    },
+    "list": {
+      "title": "저자",
+      "sortButton": "정렬",
+      "sortBy": "정렬 기준",
+      "ascending": "오름차순",
+      "descending": "내림차순",
+      "filters": "필터",
+      "clear": "지우기",
+      "sort": {
+        "name": "이름"
+      },
+      "selection": {
+        "refreshMetadata": "메타데이터 새로고침",
+        "deleteSelected": "선택 항목 삭제",
+        "exitSelection": "선택 종료",
+        "deleting": "삭제 중..."
+      }
+    },
+    "detail": {
+      "pageTitle": "저자",
+      "entityName": "저자",
+      "edit": {
+        "name": "이름",
+        "description": "설명",
+        "uploading": "업로드 중...",
+        "saving": "저장 중..."
+      },
+      "merge": {
+        "searching": "검색 중..."
+      },
+      "books": {
+        "heading": "도서",
+        "ascending": "오름차순",
+        "descending": "내림차순",
+        "sort": {
+          "title": "제목",
+          "recentlyAdded": "최근 추가한 책",
+          "publishedYear": "발행 연도"
         }
       }
     }
+  },
+  "book": {
+    "untitled": "제목 없음",
+    "collapsedSeries": {
+      "label": "시리즈",
+      "readCount": "{count}권 읽음"
+    },
+    "file": {
+      "audiobook": "오디오북",
+      "primary": "기본"
+    },
+    "actions": {
+      "read": "읽기",
+      "details": "상세 정보",
+      "download": "다운로드",
+      "metadata": "메타데이터",
+      "editMetadata": "메타데이터 편집",
+      "refreshMetadata": "메타데이터 새로고침",
+      "listen": "듣기",
+      "peek": "미리 읽기",
+      "quickView": "빠른 보기",
+      "bookDetails": "도서 상세 정보",
+      "regenerateCover": "표지 다시 생성",
+      "addToCollection": "컬렉션에 추가",
+      "setStatus": "상태 설정",
+      "sendViaEmail": "이메일로 보내기",
+      "rate": "별점 {star}점",
+      "openAs": "{format} 형식으로 열기"
+    },
+    "readStatus": {
+      "unread": "읽기 전",
+      "reading": "읽는 중",
+      "read": "읽기",
+      "abandoned": "읽기 중단",
+      "wantToRead": "읽고 싶은 책",
+      "onHold": "읽기 보류",
+      "rereading": "다시 읽는 중",
+      "skimmed": "훑어봄"
+    },
+    "download": {
+      "action": "다운로드"
+    },
+    "sort": {
+      "ascending": "오름차순",
+      "descending": "내림차순",
+      "fields": {
+        "author": "저자",
+        "title": "제목",
+        "series": "시리즈",
+        "rating": "별점",
+        "publisher": "출판사",
+        "format": "형식",
+        "language": "언어",
+        "seriesIndex": "시리즈 순서",
+        "addedAt": "추가한 날짜",
+        "updatedAt": "수정한 날짜",
+        "publishedDate": "발행일",
+        "publishedYear": "발행 연도",
+        "pageCount": "쪽수",
+        "fileSize": "파일 크기",
+        "readProgress": "독서 진행률",
+        "readStatus": "독서 상태",
+        "lastReadAt": "최근 읽은 날짜",
+        "startedAt": "읽기 시작일",
+        "finishedAt": "완독일",
+        "random": "무작위",
+        "metadataScore": "메타데이터 점수",
+        "collectionOrder": "추가한 순서"
+      },
+      "remove": "제거",
+      "moveUp": "위로 이동",
+      "moveDown": "아래로 이동",
+      "customFieldsGroup": "사용자 정의 필드",
+      "customFieldFallback": "사용자 정의 필드",
+      "emptyState": "정렬 설정이 없습니다. 제목 오름차순으로 표시합니다.",
+      "addLevel": "정렬 기준 추가"
+    },
+    "filter": {
+      "fields": {
+        "title": "제목",
+        "publisher": "출판사",
+        "language": "언어",
+        "series": "시리즈",
+        "author": "저자",
+        "genre": "장르",
+        "collection": "컬렉션",
+        "library": "도서관",
+        "format": "형식",
+        "rating": "별점",
+        "description": "설명",
+        "isbn": "ISBN",
+        "publishedDate": "발행일",
+        "publishedYear": "발행 연도",
+        "pageCount": "쪽수",
+        "startedAt": "읽기 시작일",
+        "finishedAt": "완독일",
+        "readStatus": "독서 상태",
+        "metadataScore": "메타데이터 점수",
+        "cover": "표지"
+      },
+      "customFieldsGroup": "사용자 정의 필드",
+      "customFieldFallback": "사용자 정의 필드"
+    },
+    "bulkEdit": {
+      "apply": "적용",
+      "mode": {
+        "add": "추가",
+        "remove": "제거",
+        "clear": "지우기",
+        "replace": "교체"
+      }
+    },
+    "export": {
+      "title": "메타데이터 내보내기",
+      "format": "형식",
+      "options": "옵션",
+      "exportAction": "내보내기",
+      "columns": "열 수"
+    },
+    "columnPanel": {
+      "reset": "초기화",
+      "density": {
+        "compact": "촘촘하게",
+        "comfortable": "여유롭게"
+      },
+      "rename": "이름 변경",
+      "columns": {
+        "read": "읽기",
+        "actions": "작업",
+        "cover": "표지"
+      },
+      "columnsHeading": "열 수"
+    },
+    "shortcuts": {
+      "actions": {
+        "title": "작업"
+      },
+      "general": {
+        "title": "일반"
+      }
+    },
+    "quickView": {
+      "showLess": "접기",
+      "showMore": "더 보기",
+      "collections": "컬렉션",
+      "openMetadataEditor": "메타데이터 편집기 열기",
+      "title": "도서 빠른 보기",
+      "titleFor": "{title} 빠른 보기",
+      "description": "도서 정보를 확인하고 빠른 작업을 실행하세요.",
+      "openIn": "{provider}에서 열기",
+      "primaryFile": "기본 파일",
+      "fileNumber": "파일 #{id}",
+      "noDescription": "등록된 설명이 없습니다.",
+      "coverPreview": "책 표지 미리 보기",
+      "coverPreviewFor": "{title} 표지 미리 보기",
+      "coverPreviewDescription": "확대한 표지 미리 보기 창입니다."
+    },
+    "tableView": {
+      "sort": "정렬",
+      "updated": "수정됨",
+      "failed": "실패",
+      "keyboardShortcutsTitle": "키보드 단축키 (?)"
+    },
+    "detail": {
+      "tabs": {
+        "details": "상세 정보",
+        "editMetadata": "메타데이터 편집",
+        "files": "파일",
+        "readingLog": "독서 기록",
+        "highlights": "하이라이트"
+      },
+      "addFile": {
+        "uploading": "업로드 중...",
+        "done": "완료",
+        "retry": "다시 시도",
+        "upload": "업로드",
+        "title": "파일 추가"
+      },
+      "addSession": {
+        "format": "형식",
+        "saving": "저장 중...",
+        "title": "독서 세션 추가",
+        "startedAt": "시작 시각",
+        "duration": "독서 시간 (분)",
+        "endProgress": "종료 진행률 %",
+        "optional": "선택 사항",
+        "noFormat": "형식 지정 안 함",
+        "submit": "세션 추가"
+      },
+      "coverEditor": {
+        "saving": "저장 중...",
+        "regenerateCover": "표지 다시 생성",
+        "unlockCover": "표지 잠금 해제",
+        "lockCover": "표지 잠금",
+        "fileTab": "파일",
+        "urlTab": "URL",
+        "chooseImage": "이미지 선택...",
+        "findCoverOnline": "온라인에서 표지 찾기",
+        "saveCover": "표지 저장",
+        "revertToOriginal": "원본으로 복원"
+      },
+      "coverSearch": {
+        "titleField": "제목",
+        "authorField": "저자",
+        "searching": "검색 중...",
+        "title": "온라인 검색",
+        "subtitle": "책 표지 검색",
+        "sourceField": "출처",
+        "allSources": "모든 출처",
+        "audiobookCovers": "오디오북 표지",
+        "squareHint": "(정사각형)",
+        "findCovers": "표지 찾기",
+        "selectCover": "표지 선택",
+        "noResultsTitle": "검색 결과가 없습니다",
+        "noResultsHint": "검색어를 수정해 보세요",
+        "readyTitle": "검색 준비 완료",
+        "readyHint": "위에 제목과 저자를 입력하세요"
+      },
+      "details": {
+        "read": "읽기",
+        "audiobook": "오디오북",
+        "finished": "완독",
+        "untitled": "제목 없음",
+        "showLess": "접기",
+        "showMore": "더 보기",
+        "publisher": "출판사",
+        "published": "발행일",
+        "language": "언어",
+        "pages": "쪽수",
+        "duration": "재생 시간",
+        "isbn": "ISBN",
+        "library": "도서관",
+        "added": "추가됨",
+        "saving": "저장 중...",
+        "customMetadata": "사용자 정의 메타데이터",
+        "rateStar": "별점 {star}점",
+        "listen": "듣기",
+        "peek": "미리 읽기",
+        "sendViaEmail": "이메일로 보내기",
+        "metadataScore": "메타데이터 점수",
+        "openIn": "{provider}에서 열기",
+        "fileSize": "파일 크기",
+        "dateStarted": "읽기 시작일",
+        "dateFinished": "완독일",
+        "noDescription": "등록된 설명이 없습니다.",
+        "by": "저자",
+        "narratedBy": "낭독",
+        "ratingLocked": "별점이 잠겨 있습니다",
+        "chooseFormat": "형식 선택",
+        "primary": "기본",
+        "personalReview": {
+          "title": "나만의 리뷰",
+          "toggleAria": "나만의 리뷰 표시 전환",
+          "editAria": "나만의 리뷰 편집",
+          "placeholder": "비공개 리뷰",
+          "clearAria": "나만의 리뷰 지우기",
+          "cancelEditAria": "리뷰 편집 취소"
+        },
+        "editCover": "표지 편집",
+        "resetFileProgress": "파일 진행률 초기화",
+        "resetting": "초기화 중...",
+        "resetProgressConfirm": "{label}의 저장된 독서 진행률을 초기화하시겠습니까?",
+        "moreCount": "외 {count}개",
+        "primaryFormat": "기본 형식",
+        "edition": "판본",
+        "abridged": "축약판",
+        "unabridged": "완전판",
+        "cancelDateAddedEdit": "추가한 날짜 편집 취소",
+        "editDateAdded": "추가한 날짜 편집",
+        "cancelDateStartedEdit": "독서 시작일 편집 취소",
+        "editDateStarted": "독서 시작일 편집",
+        "cancelDateFinishedEdit": "완독일 편집 취소",
+        "editDateFinished": "완독일 편집",
+        "synopsis": "줄거리"
+      },
+      "editMetadata": {
+        "lockAll": "모두 잠금",
+        "unlockAll": "모두 잠금 해제",
+        "saving": "저장 중...",
+        "enabled": "활성화",
+        "formats": "형식",
+        "titleLabel": "제목",
+        "subtitleLabel": "부제",
+        "authorsLabel": "저자",
+        "narratorsLabel": "낭독자",
+        "genresLabel": "장르",
+        "tagsLabel": "태그",
+        "ratingLabel": "별점",
+        "clear": "지우기",
+        "seriesLabel": "시리즈",
+        "publisherLabel": "출판사",
+        "languageLabel": "언어",
+        "comicVolumeLabel": "음량",
+        "customMetadata": "사용자 정의 메타데이터",
+        "descriptionLabel": "설명",
+        "diffPanel": {
+          "untitled": "제목 없음",
+          "results": "검색 결과"
+        },
+        "diff": {
+          "locked": "잠김",
+          "previewAlt": "미리 보기",
+          "showLess": "접기",
+          "showMore": "더 보기"
+        },
+        "searchPanel": {
+          "titlePlaceholder": "제목",
+          "authorPlaceholder": "저자",
+          "isbnPlaceholder": "ISBN",
+          "searching": "검색 중...",
+          "all": "전체",
+          "fieldRules": "필드 규칙",
+          "custom": "사용자 지정",
+          "noResults": "검색 결과가 없습니다"
+        },
+        "rateStar": "별점 {star}점",
+        "pageCountLabel": "쪽수",
+        "bookFilesTarget": "도서 파일",
+        "formatFilesTarget": "{formats} 파일",
+        "noPrimaryFile": "기본 파일이 없습니다",
+        "formatNotSupported": "이 파일 형식은 메타데이터 기록을 지원하지 않습니다",
+        "formatDisabled": "이 형식의 메타데이터 기록이 비활성화되어 있습니다",
+        "fileExceedsSizeLimit": "파일 크기가 메타데이터 기록 제한을 초과했습니다",
+        "writing": "기록 중...",
+        "saveInProgress": "저장 중",
+        "metadataSaved": "메타데이터 저장 완료",
+        "metadataWrittenToFile": "파일에 메타데이터 기록 완료",
+        "saveFailed": "변경 사항을 저장하지 못했습니다",
+        "saveFailedWithStatus": "변경 사항을 저장하지 못했습니다 (HTTP {status})",
+        "loadFromFileFailed": "파일에서 메타데이터를 불러오지 못했습니다",
+        "noMetadataInFile": "파일에 메타데이터가 없습니다",
+        "loadFromFile": "파일에서 불러오기",
+        "loadFromFileTooltip": "기본 도서 파일에서 메타데이터 불러오기",
+        "writeToFile": "파일에 기록",
+        "autoFill": "자동 채우기",
+        "fetchingMetadata": "메타데이터 수집 중...",
+        "allFieldsLocked": "모든 필드가 잠겨 있습니다",
+        "autoFillTooltip": "메타데이터 설정에 따라 필드 자동 채우기",
+        "lockAllTooltip": "모든 필드 잠금",
+        "unlockAllTooltip": "모든 필드 잠금 해제",
+        "fileWriteBackDetails": "파일 기록 상세 정보",
+        "fileWriteBack": "파일에 기록",
+        "saveWritesMetadata": "'저장'을 누르면 {target}에 메타데이터를 기록합니다",
+        "bookFiles": "도서 파일",
+        "supportedFields": "지원 필드",
+        "communityRatingsLabel": "외부 서비스 별점",
+        "noProviderRatings": "제공자 별점 없음",
+        "yearLabel": "연도",
+        "isbn13Label": "ISBN-13",
+        "isbn10Label": "ISBN-10",
+        "durationLabel": "재생 시간 (초)",
+        "abridgedLabel": "축약판",
+        "providerIds": "제공자 식별자",
+        "comicDetails": "만화 상세 정보",
+        "comicIssueNumberLabel": "호수",
+        "comicStoryArcsLabel": "이야기 구성",
+        "comicPencillersLabel": "밑그림 작가",
+        "comicInkersLabel": "펜선 작가",
+        "comicColoristsLabel": "채색 작가",
+        "comicLetterersLabel": "글자 작가",
+        "comicCoverArtistsLabel": "표지 작가",
+        "comicCharactersLabel": "등장인물",
+        "comicTeamsLabel": "팀",
+        "comicLocationsLabel": "장소",
+        "unlockField": "{field} 잠금 해제",
+        "lockField": "{field} 잠금",
+        "writeAndRename": "파일 기록 및 이름 변경",
+        "writeAndRenameShort": "기록 및 이름 변경"
+      },
+      "files": {
+        "sort": {
+          "name": "이름",
+          "format": "형식",
+          "size": "크기",
+          "date": "날짜"
+        },
+        "read": "읽기",
+        "play": "재생",
+        "download": "다운로드",
+        "moreActions": "추가 작업",
+        "rename": "이름 변경",
+        "saving": "저장 중...",
+        "peek": "미리 읽기",
+        "title": "도서 파일",
+        "sortAria": "파일 정렬",
+        "syncHistory": "동기화 기록",
+        "metadataWriteBack": "메타데이터 파일 기록",
+        "addFile": "파일 추가",
+        "hidePaths": "경로 숨기기",
+        "showPaths": "경로 표시",
+        "hideLog": "로그 숨기기",
+        "viewSyncLog": "동기화 로그 보기",
+        "primary": "기본",
+        "renameModal": {
+          "title": "파일 이름 변경",
+          "placeholder": "새 파일 이름"
+        },
+        "deleteModal": {
+          "title": "파일을 삭제하시겠습니까?"
+        },
+        "deleting": "삭제 중..."
+      },
+      "highlights": {
+        "export": {
+          "trigger": "내보내기",
+          "plainText": "일반 텍스트",
+          "page": "페이지 내보내기",
+          "selected": "선택 항목 내보내기"
+        },
+        "untitled": "제목 없음",
+        "sort": {
+          "newest": "최신순",
+          "oldest": "오래된 순",
+          "position": "위치"
+        },
+        "allChapters": "모든 장",
+        "trash": "휴지통",
+        "empty": {
+          "none": "아직 하이라이트가 없습니다",
+          "resetFilters": "필터 초기화"
+        },
+        "note": {
+          "placeholder": "메모 추가...",
+          "saving": "저장 중"
+        },
+        "filterByChapter": "장별 필터",
+        "uncategorized": "미분류"
+      },
+      "readingLog": {
+        "export": {
+          "button": "내보내기"
+        },
+        "heatmap": {
+          "title": "활동",
+          "minutesUnit": "분"
+        },
+        "hero": {
+          "stats": {
+            "sessions": "세션",
+            "lastRead": "최근 읽은 날짜",
+            "totalTime": "총 독서 시간",
+            "avgSession": "평균 세션"
+          },
+          "lastRead": "최근 읽은 날짜",
+          "dateStarted": "읽기 시작일",
+          "dateFinished": "완독일",
+          "notSet": "미설정",
+          "firstRead": "처음 읽은 날짜",
+          "addSession": "세션 추가"
+        },
+        "journey": {
+          "tooltipProgress": "진행률",
+          "tooltipReading": "읽는 중",
+          "minutesUnit": "분"
+        },
+        "untitled": "제목 없음",
+        "filters": {
+          "allTime": "전체 기간",
+          "last30": "최근 30일",
+          "thisYear": "올해",
+          "allFormats": "모든 형식",
+          "show": "표시",
+          "last90": "최근 90일"
+        },
+        "table": {
+          "title": "세션",
+          "colDate": "날짜",
+          "colDateMobile": "날짜",
+          "colDuration": "재생 시간",
+          "colDurationMobile": "재생 시간",
+          "colEndProgressMobile": "종료",
+          "colFormat": "형식",
+          "loadMore": "더 불러오기",
+          "sourceWeb": "웹",
+          "sourceManual": "수동",
+          "colProgressChange": "진행률 변화",
+          "colProgressChangeMobile": "변화량",
+          "colEndProgress": "종료 진행률",
+          "colPace": "속도",
+          "colSource": "출처",
+          "colFormatMobile": "형식",
+          "cancelDelete": "삭제 취소",
+          "deleteAria": "세션 삭제"
+        },
+        "weekdays": {
+          "sun": "일",
+          "mon": "월",
+          "tue": "화",
+          "wed": "수",
+          "thu": "목",
+          "fri": "금",
+          "sat": "토"
+        },
+        "months": {
+          "jan": "1월",
+          "feb": "2월",
+          "mar": "3월",
+          "apr": "4월",
+          "may": "5월",
+          "jun": "6월",
+          "jul": "7월",
+          "aug": "8월",
+          "sep": "9월",
+          "oct": "10월",
+          "nov": "11월",
+          "dec": "12월"
+        },
+        "sourceSplit": {
+          "shortTitle": "출처"
+        }
+      },
+      "richDescription": {
+        "underline": "밑줄",
+        "strikethrough": "취소선",
+        "preview": "미리 보기",
+        "apply": "적용",
+        "noDescription": "등록된 설명이 없습니다.",
+        "bold": "굵게",
+        "italic": "기울임",
+        "bulletList": "글머리 기호 목록",
+        "numberedList": "번호 목록",
+        "outdentAria": "목록 들여쓰기 줄이기",
+        "outdent": "들여쓰기 줄이기",
+        "indentAria": "목록 들여쓰기 늘리기",
+        "indent": "들여쓰기 늘리기",
+        "quote": "인용문",
+        "editLink": "링크 편집",
+        "link": "링크",
+        "removeLink": "링크 제거",
+        "undo": "실행 취소",
+        "redo": "다시 실행",
+        "clearFormatting": "서식 지우기",
+        "previewDescription": "설명 미리 보기",
+        "linkUrlLabel": "링크 주소",
+        "applyLink": "링크 적용",
+        "cancelLink": "링크 취소"
+      },
+      "seriesMembership": {
+        "seriesPlaceholder": "시리즈",
+        "moveUp": "위로 이동",
+        "moveDown": "아래로 이동",
+        "addSeries": "시리즈 추가",
+        "removeSeries": "시리즈 제거",
+        "seriesIndexLabel": "시리즈 내 순서",
+        "totalLabel": "시리즈 도서 수"
+      },
+      "writeRename": {
+        "skipped": "건너뜀"
+      },
+      "authorBooks": {
+        "alsoByAuthor": "이 저자의 다른 책",
+        "alsoByAuthors": "이 저자들의 다른 책"
+      },
+      "header": {
+        "previousBook": "이전 책",
+        "nextBook": "다음 책"
+      },
+      "discover": {
+        "moreInSeries": "시리즈의 다른 책",
+        "byAuthor": "같은 저자의 책",
+        "similarBooks": "비슷한 책"
+      },
+      "recommended": {
+        "moreLikeThis": "비슷한 추천 도서"
+      }
+    },
+    "table": {
+      "actions": {
+        "editMetadata": "메타데이터 편집",
+        "refreshMetadata": "메타데이터 새로고침",
+        "quickView": "빠른 보기",
+        "bookDetails": "도서 상세 정보",
+        "addToCollection": "컬렉션에 추가"
+      },
+      "rating": {
+        "label": "별점"
+      },
+      "read": {
+        "play": "재생",
+        "read": "읽기",
+        "primary": "기본"
+      },
+      "readStatus": {
+        "unread": "읽기 전"
+      },
+      "cover": {
+        "previewDescription": "책 표지 미리 보기",
+        "editTitle": "표지 편집"
+      },
+      "text": {
+        "openDetails": "상세 정보 열기"
+      },
+      "locks": {
+        "lockAll": "모든 필드 잠금",
+        "unlockAll": "모든 필드 잠금 해제"
+      }
+    },
+    "move": {
+      "back": "뒤로"
+    }
+  },
+  "bookMetadataFetch": {
+    "stats": {
+      "processing": "처리 중",
+      "failed": "실패",
+      "queued": "대기 목록에 추가됨"
+    },
+    "actions": {
+      "pause": "일시 정지"
+    },
+    "label": {
+      "paused": "잠시 중단"
+    },
+    "report": {
+      "columns": {
+        "title": "제목",
+        "library": "도서관",
+        "author": "저자",
+        "error": "오류"
+      }
+    }
+  },
+  "bookDock": {
+    "apply": "적용",
+    "done": "완료",
+    "discard": "취소",
+    "rescan": "다시 스캔",
+    "uploadAction": "업로드",
+    "uploading": "업로드 중...",
+    "tab": {
+      "all": "전체",
+      "pending": "대기 중",
+      "error": "오류",
+      "ready": "준비됨"
+    },
+    "status": {
+      "pending": "대기 중",
+      "error": "오류",
+      "ready": "준비됨"
+    },
+    "field": {
+      "title": "제목",
+      "subtitle": "부제",
+      "authors": "저자",
+      "publisher": "출판사",
+      "language": "언어",
+      "series": "시리즈",
+      "genres": "장르",
+      "description": "설명",
+      "publishedDate": "발행일",
+      "seriesIndex": "시리즈 순서",
+      "year": "연도",
+      "isbn13": "ISBN-13",
+      "isbn10": "ISBN-10"
+    },
+    "fileList": {
+      "colNew": "새 소식",
+      "colSize": "크기",
+      "colFormat": "형식",
+      "colApply": "적용",
+      "colStatus": "상태",
+      "coverPreviewDescription": "확대한 표지 미리 보기 창입니다.",
+      "colFile": "파일"
+    },
+    "sheet": {
+      "saved": "저장됨",
+      "results": "검색 결과",
+      "review": "검토"
+    },
+    "finalizeDialog": {
+      "start": "시작",
+      "details": "상세 정보",
+      "import": "가져오기"
+    },
+    "layout": {
+      "pause": "일시 정지",
+      "clearSearch": "검색 지우기",
+      "filter": {
+        "all": "전체",
+        "pending": "대기 중",
+        "error": "오류",
+        "ready": "준비됨"
+      },
+      "sort": {
+        "label": "정렬 기준",
+        "createdAt": "최근 추가한 책",
+        "fileSize": "크기",
+        "format": "형식",
+        "status": "상태"
+      },
+      "row": {
+        "file": "파일"
+      }
+    }
+  },
+  "collection": {
+    "dialog": {
+      "name": "이름"
+    },
+    "createDialog": {
+      "title": "컬렉션 추가"
+    },
+    "editDialog": {
+      "confirmDelete": "확인하시겠습니까?",
+      "saving": "저장 중...",
+      "deleting": "삭제 중..."
+    },
+    "addToSheet": {
+      "newCollection": "컬렉션 추가",
+      "namePlaceholder": "컬렉션 이름",
+      "create": "만들기",
+      "collections": "컬렉션",
+      "done": "완료",
+      "added": "추가됨"
+    }
+  },
+  "components": {
+    "appHeader": {
+      "searchAllBooks": "전체 도서 검색...",
+      "searching": "검색 중...",
+      "noResults": "검색 결과 없음",
+      "loadingMore": "추가로 불러오는 중...",
+      "bookDock": "도서 보관함",
+      "statistics": "통계",
+      "achievements": "독서 성취",
+      "annotations": "메모와 하이라이트",
+      "uploadBooks": "도서 업로드",
+      "appearance": "화면 꾸미기",
+      "theme": "테마",
+      "accent": "강조색",
+      "radius": "모서리",
+      "background": "배경",
+      "settings": "설정",
+      "whatsNew": "업데이트 소식",
+      "documentation": "사용 설명서",
+      "help": "도움말",
+      "starOnGithub": "GitHub에서 별표 추가",
+      "new": "새 소식",
+      "newReleaseNotes": "새 업데이트 소식이 있습니다",
+      "account": "계정",
+      "changePassword": "비밀번호 변경",
+      "signOut": "로그아웃",
+      "surfaceOpacity": "표면 불투명도",
+      "loadMore": "더 불러오기 ({loaded}/{total})",
+      "allMatchesShown": "{count, plural, =0 {검색 결과가 없습니다} other {검색 결과 #개를 모두 표시했습니다}}",
+      "bookCount": "{count, plural, =0 {도서 0권} other {도서 #권}}",
+      "fileCount": "{count, plural, =0 {파일 0개} other {파일 #개}}",
+      "uploadedToast": "{uploaded} 업로드 완료",
+      "uploadFailedToast": "{failed} 업로드 실패",
+      "uploadPartialToast": "{uploaded} 업로드 완료, {failed} 실패",
+      "appearanceDescription": "테마, 강조색, 모서리 모양, 표면과 배경을 설정하세요.",
+      "githubStar": {
+        "title": "BookOrbit이 마음에 드시나요?",
+        "body": "GitHub에서 별표를 추가해 프로젝트를 응원해 주세요. 더 많은 사람이 앱을 발견하고 개발을 이어가는 데 도움이 됩니다.",
+        "cta": "GitHub에서 BookOrbit 별표 추가"
+      },
+      "surfaceOpacityValue": "{value}%",
+      "surfaceBrightnessValue": "{value}%"
+    },
+    "sidebar": {
+      "dashboard": "대시보드",
+      "authors": "저자",
+      "series": "시리즈",
+      "tools": "도구",
+      "libraries": "도서관",
+      "newLibrary": "도서관 추가",
+      "smartScopes": "스마트 책장",
+      "newSmartScope": "스마트 책장 추가",
+      "noSmartScopes": "아직 스마트 책장이 없습니다",
+      "collections": "컬렉션",
+      "newCollection": "컬렉션 추가",
+      "noCollections": "아직 컬렉션이 없습니다",
+      "newReleaseNotes": "새 업데이트 소식이 있습니다",
+      "support": "BookOrbit 후원",
+      "supportAria": "Ko-fi에서 BookOrbit 후원",
+      "sectionHeader": {
+        "add": "추가",
+        "showAll": "모두 보기",
+        "showCount": "{count}개 보기",
+        "rowsShown": "표시할 행 수",
+        "reorder": "순서 변경",
+        "doneReordering": "순서 변경 완료",
+        "menuAria": "{section} 메뉴 옵션"
+      },
+      "noLibraries": "아직 도서관이 없습니다",
+      "clearFilter": "필터 지우기",
+      "filterLibraries": "도서관 필터",
+      "filterLibrariesPlaceholder": "도서관 검색...",
+      "filterCollections": "컬렉션 필터",
+      "filterCollectionsPlaceholder": "컬렉션 검색...",
+      "zones": {
+        "browse": "둘러보기"
+      },
+      "scanProgress": "{processed} / {total}권",
+      "filterSummary": "전체 {total}개 중 {shown}개 표시",
+      "filterSmartScopes": "스마트 책장 필터",
+      "filterSmartScopesPlaceholder": "스마트 책장 검색...",
+      "seeAllLibraries": "모든 도서관 보기 ({count})",
+      "seeAllSmartScopes": "모든 스마트 책장 보기 ({count})",
+      "seeAllCollections": "모든 컬렉션 보기 ({count})",
+      "updateAvailable": "업데이트 {version}",
+      "updateTooltip": "{version} 업데이트 가능",
+      "openUpdateRelease": "GitHub에서 {version} 업데이트 보기",
+      "reorder": {
+        "gripAria": "{name} 순서 변경",
+        "lifted": "{name} 선택됨, 전체 {total}개 중 {position}번째입니다. 방향키로 이동하세요.",
+        "moved": "{name}, 전체 {total}개 중 {position}번째",
+        "dropped": "{name}을 전체 {total}개 중 {position}번째에 배치했습니다",
+        "cancelled": "순서 변경을 취소했습니다. {name}이 전체 {total}개 중 {position}번째로 돌아갔습니다.",
+        "filteredHint": "순서를 변경하려면 필터를 지우세요"
+      }
+    },
+    "selectionActionBar": {
+      "setReadingStatus": "독서 상태 설정",
+      "setRating": "별점 설정",
+      "openMetadataEditor": "메타데이터 편집기 열기",
+      "addToCollection": "컬렉션에 추가",
+      "removeFromCollection": "컬렉션에서 제거",
+      "sendViaEmail": "이메일로 보내기",
+      "moreActions": "추가 작업",
+      "setField": "필드 설정",
+      "refreshMetadata": "메타데이터 새로고침",
+      "reExtractCover": "표지 다시 추출",
+      "metadataLock": "메타데이터 잠금",
+      "lockAll": "모두 잠금",
+      "unlockAll": "모두 잠금 해제",
+      "exportMetadata": "메타데이터 내보내기",
+      "deleteSelected": "선택 항목 삭제",
+      "exitSelection": "선택 종료",
+      "primaryOnly": "기본 파일만",
+      "allFormats": "모든 형식",
+      "audioOnly": "오디오만",
+      "clear": "지우기",
+      "apply": "적용",
+      "typeDelete": "DELETE 입력",
+      "editIndividually": "도서별로 편집",
+      "downloadFilesZip": "ZIP 파일로 다운로드",
+      "downloadFilesZipLabel": "ZIP 파일로 다운로드:",
+      "setRatingLabel": "별점 설정:",
+      "setFieldLabel": "필드 설정:",
+      "fieldPlaceholder": "비우면 값이 삭제됩니다",
+      "fieldPlaceholderArray": "쉼표로 구분하세요 (비우면 삭제)",
+      "deleteConfirm": "{count, plural, =0 {선택한 도서가 없습니다} other {도서 #권을 삭제하시겠습니까?}}"
+    },
+    "viewHeader": {
+      "select": "선택",
+      "display": "화면",
+      "searchPlaceholder": "제목, 저자, 시리즈, 낭독자 검색...",
+      "mobileSearch": {
+        "done": "완료",
+        "description": "제목, 저자, 시리즈 또는 낭독자로 검색하세요."
+      },
+      "mobileMenu": {
+        "grid": "격자",
+        "list": "목록",
+        "select": "선택",
+        "exitSelect": "선택 종료"
+      },
+      "displayControls": {
+        "display": "화면",
+        "coverSize": "표지 크기",
+        "gridGap": "격자 간격",
+        "coverShape": "표지 모양",
+        "circle": "원형",
+        "square": "정사각형",
+        "showJumpRails": "빠른 이동 막대 표시",
+        "columnsHint": "표 머리글의 열 표시 설정에서 열을 표시하거나 숨기세요."
+      },
+      "displayDescription": "표지 크기, 격자 간격과 보기 옵션을 설정하세요.",
+      "columnVisibilityHint": "표 머리글의 열 표시 설정에서 열을 표시하거나 숨기세요.",
+      "columnVisibilityMobileHint": "표 머리글에서 열 표시 여부를 설정할 수 있습니다."
+    },
+    "iconPicker": {
+      "selectIcon": "아이콘 선택",
+      "customTab": "사용자 지정",
+      "searching": "검색 중...",
+      "clearSelectionAria": "선택한 아이콘 지우기",
+      "searchLucide": "Lucide 아이콘 검색...",
+      "searchCustom": "사용자 정의 아이콘 검색...",
+      "chooseIcon": "아이콘 선택...",
+      "noIconsMatch": "\"{query}\"에 해당하는 아이콘이 없습니다",
+      "typeToSearch": "입력하여 전체 아이콘 검색",
+      "noCustomIcons": "업로드한 아이콘이 없습니다",
+      "noIconsAvailable": "사용할 수 있는 아이콘이 없습니다"
+    },
+    "themePicker": {
+      "light": "밝게",
+      "dark": "어둡게",
+      "system": "시스템"
+    },
+    "languagePicker": {
+      "suggested": "추천",
+      "all": "모든 언어",
+      "results": "검색 결과",
+      "searchPlaceholder": "언어 검색",
+      "empty": "\"{query}\"에 해당하는 언어가 없습니다"
+    },
+    "userAvatar": {
+      "profilePicture": "프로필 사진",
+      "profilePictureOf": "{name} 프로필 사진"
+    },
+    "ui": {
+      "sidebar": {
+        "title": "사이드바",
+        "mobileDescription": "모바일 사이드바를 표시합니다.",
+        "toggle": "사이드바 열기/닫기"
+      },
+      "chipInput": {
+        "typeAndEnter": "입력한 뒤 Enter를 눌러 추가하세요",
+        "pressEnter": "Enter를 눌러 추가하세요"
+      }
+    },
+    "entityIndex": {
+      "sortBy": "정렬 기준",
+      "sort": {
+        "custom": "사용자 지정 순서",
+        "name": "이름",
+        "bookCount": "도서 수"
+      },
+      "ascending": "오름차순",
+      "descending": "내림차순",
+      "clearSearch": "검색 지우기",
+      "noMatches": "일치하는 항목 없음",
+      "resultCount": "전체 {total}개 중 {shown}개",
+      "noMatchesHint": "다른 검색어를 입력해 보세요.",
+      "bookCount": "도서: {count}권",
+      "librariesEmptyHint": "도서관을 만들고 책을 추가하세요.",
+      "smartScopesEmptyHint": "자주 사용하는 필터를 스마트 책장으로 저장하세요.",
+      "collectionsEmptyHint": "직접 고른 도서를 컬렉션으로 모으세요."
+    },
+    "entityNotFound": {
+      "title": "{entity} 항목을 찾을 수 없습니다",
+      "description": "이 {entity} 항목이 없거나 삭제되었습니다.",
+      "goBack": "돌아가기"
+    },
+    "radiusPicker": {
+      "sharp": "각진 모서리",
+      "default": "기본 모서리",
+      "rounded": "둥근 모서리",
+      "pill": "캡슐형 모서리"
+    }
+  },
+  "customIcons": {
+    "namePlaceholder": "이름",
+    "uploading": "업로드 중...",
+    "upload": "업로드"
+  },
+  "dashboard": {
+    "common": {
+      "retry": "다시 시도",
+      "untitled": "제목 없음",
+      "failedToLoad": "불러오기 실패",
+      "cover": "표지",
+      "bookCover": "책 표지"
+    },
+    "settings": {
+      "shelfNames": {
+        "continueReading": "이어서 읽기",
+        "smartScope": "스마트 책장",
+        "recentlyAdded": "최근 추가한 책",
+        "continueListening": "이어서 듣기",
+        "wantToRead": "읽고 싶은 책",
+        "upNextInSeries": "시리즈 다음 권",
+        "random": "새로운 책 발견"
+      },
+      "smartScope": "스마트 책장",
+      "resetToDefaults": "기본값으로 초기화",
+      "title": "대시보드 꾸미기",
+      "tabs": {
+        "widgets": "위젯",
+        "shelves": "책장"
+      },
+      "widgetNames": {
+        "readingStreak": "연속 독서",
+        "currentlyReading": "읽고 있는 책",
+        "readingGoal": "독서 목표",
+        "readingDna": "독서 성향",
+        "monthlyChallenge": "이달의 도전",
+        "highlightOfTheDay": "오늘의 문장",
+        "neglectedGems": "아직 읽지 않은 추천 도서",
+        "readingRhythm": "독서 습관",
+        "diversityScore": "독서 다양성",
+        "libraryOverview": "도서관 현황",
+        "yearProjection": "올해 예상 독서량",
+        "longWait": "오랫동안 기다린 책"
+      },
+      "shelfLayout": {
+        "title": "책장 배치",
+        "description": "넓은 화면에서 책장을 배치하는 방식을 선택하세요.",
+        "wide": "넓은 한 열",
+        "wideDescription": "한 줄에 책장 하나를 표시합니다.",
+        "twoColumns": "두 열",
+        "twoColumnsDescription": "한 줄에 책장 두 개를 표시합니다."
+      },
+      "shelfRows": {
+        "label": "도서 행 수",
+        "hint": "각 책장에 표시할 도서 행 수를 설정하세요. 좁은 화면에서는 최대 두 행을 표시합니다."
+      },
+      "reorderHintWidget": "끌어서 순서를 바꾸고 스위치로 위젯을 표시하거나 숨기세요.",
+      "reorderHintShelf": "끌어서 순서를 바꾸고 스위치로 책장을 표시하거나 숨기세요.",
+      "noSmartScopes": "아직 스마트 책장이 없습니다. 사이드바에서 만들어 보세요.",
+      "addShelf": "책장 추가"
+    },
+    "welcome": {
+      "emptyTitle": "도서관이 비어 있습니다",
+      "noLibrariesTitle": "아직 도서관이 없습니다",
+      "emptyDescription": "도서관을 만들고 도서를 관리하고 읽어 보세요. 도서가 있는 폴더를 지정하면 자동으로 등록합니다.",
+      "noLibrariesDescription": "관리자가 아직 도서관을 설정하지 않았습니다. 관리자에게 문의하세요.",
+      "createFirstLibrary": "첫 도서관 만들기"
+    },
+    "widgets": {
+      "currentlyReading": {
+        "continueReading": "이어서 읽기",
+        "title": "읽고 있는 책",
+        "empty": "읽고 있는 책이 없습니다. 읽기를 시작하면 여기에 표시됩니다."
+      },
+      "diversityScore": {
+        "subScores": {
+          "genre": "장르",
+          "author": "저자",
+          "era": "시대",
+          "language": "언어"
+        },
+        "title": "독서 다양성",
+        "notEnoughData": "3권 이상 읽으면 독서 다양성 점수를 확인할 수 있습니다"
+      },
+      "libraryOverview": {
+        "stats": {
+          "books": "도서",
+          "authors": "저자",
+          "series": "시리즈",
+          "storage": "저장 공간"
+        },
+        "title": "도서관 현황",
+        "empty": "도서관이 비어 있습니다. 도서를 추가해 보세요.",
+        "addedThisYear": "올해 {count}권 추가"
+      },
+      "readingDna": {
+        "traits": {
+          "time": "시간",
+          "length": "길이",
+          "variety": "다양성",
+          "rhythm": "리듬",
+          "speed": "속도"
+        },
+        "title": "독서 성향",
+        "notEnoughData": "5권 이상 읽으면 독서 성향을 확인할 수 있습니다"
+      },
+      "readingStreak": {
+        "lastSevenDays": "최근 7일",
+        "title": "연속 독서",
+        "empty": "오늘 독서하고 연속 독서 기록을 시작하세요"
+      },
+      "highlightOfTheDay": {
+        "title": "오늘의 문장",
+        "empty": "읽으면서 문장에 하이라이트를 표시하면 여기에 나타납니다"
+      },
+      "longWait": {
+        "title": "오랫동안 기다린 책",
+        "empty": "기다리는 책이 없습니다. 모든 책을 읽기 시작했네요!",
+        "daysWaiting": "일 대기 중",
+        "startReading": "읽기 시작"
+      },
+      "monthlyChallenge": {
+        "title": "이달의 도전",
+        "complete": "달성!"
+      },
+      "neglectedGems": {
+        "title": "아직 읽지 않은 추천 도서",
+        "empty": "높은 별점의 도서를 모두 읽었습니다!",
+        "daysWaiting": "{count}일 대기 중",
+        "queued": "대기 목록에 추가됨",
+        "addToQueue": "대기 목록에 추가",
+        "shuffle": "다시 섞기"
+      },
+      "readingGoal": {
+        "title": "{year}년 독서 목표",
+        "setGoalPrompt": "독서 목표를 설정하고 진행률을 확인하세요",
+        "setGoal": "목표 설정",
+        "booksPerYear": "연간 독서량",
+        "ofGoal": "목표 {goal}권",
+        "percentComplete": "{percentage}% 달성",
+        "editGoal": "목표 수정"
+      },
+      "readingRhythm": {
+        "title": "독서 습관",
+        "empty": "독서를 시작하면 독서 습관을 확인할 수 있습니다",
+        "consistency": "{activeDays} · 실천율 {percent}%",
+        "avgPerDay": "하루 평균 {time}"
+      },
+      "yearProjection": {
+        "title": "올해 예상 독서량",
+        "books": "권",
+        "trendUp": "증가 추세",
+        "trendDown": "감소 추세",
+        "trendSteady": "꾸준한 속도",
+        "pages": "쪽",
+        "hours": "시간",
+        "readCount": "{count}권 읽음",
+        "daysLeft": "{count}일 남음"
+      }
+    },
+    "libraryLoad": {
+      "errorTitle": "도서관을 불러올 수 없습니다",
+      "errorDescription": "도서관을 불러오지 못했습니다. 도서관 데이터는 삭제되지 않았습니다."
+    },
+    "scroller": {
+      "failedToLoad": "불러오지 못했습니다.",
+      "empty": {
+        "continueReading": "아직 읽고 있는 책이 없습니다. 읽기를 시작하면 여기에 표시됩니다.",
+        "continueListening": "아직 듣고 있는 오디오북이 없습니다. 듣기를 시작하면 여기에 표시됩니다.",
+        "wantToRead": "아직 읽고 싶은 책으로 표시한 도서가 없습니다.",
+        "upNextInSeries": "아직 다음 권 추천이 없습니다. 한 권을 완독하면 다음 권이 표시됩니다.",
+        "recentlyAdded": "아직 도서관에 도서가 없습니다.",
+        "smartScope": "스마트 책장 조건에 해당하는 도서가 없습니다.",
+        "default": "도서를 찾을 수 없습니다."
+      }
+    }
+  },
+  "email": {
+    "title": "이메일",
+    "saving": "저장 중...",
+    "update": "업데이트",
+    "create": "만들기",
+    "badge": {
+      "default": "기본값",
+      "shared": "공유됨",
+      "system": "시스템"
+    },
+    "tabs": {
+      "providers": "제공자",
+      "recipients": "수신자",
+      "groups": "그룹",
+      "templates": "서식",
+      "preferences": "환경 설정",
+      "history": "기록"
+    },
+    "providers": {
+      "name": "이름",
+      "host": "호스트",
+      "port": "포트",
+      "username": "사용자 이름",
+      "password": "비밀번호",
+      "testTooltip": "연결 테스트"
+    },
+    "recipients": {
+      "heading": "수신자",
+      "name": "이름",
+      "emailAddress": "이메일 주소",
+      "deviceNone": "없음",
+      "formatAuto": "자동"
+    },
+    "groups": {
+      "removeMember": "제거",
+      "add": "추가"
+    },
+    "templates": {
+      "name": "이름",
+      "namePlaceholder": "기본값"
+    },
+    "preferences": {
+      "none": "없음"
+    },
+    "history": {
+      "loadMore": "더 불러오기",
+      "statusFailed": "실패",
+      "statusPending": "대기 중",
+      "statusQueued": "대기 목록에 추가됨"
+    },
+    "send": {
+      "recipients": "수신자",
+      "groups": "그룹",
+      "options": "옵션",
+      "unknownFormat": "알 수 없음",
+      "default": "기본값",
+      "sending": "보내는 중...",
+      "title": "이메일로 보내기",
+      "fileFormat": "파일 형식"
+    },
+    "loadFailed": "불러오기 실패"
+  },
+  "hardcover": {
+    "bookSync": {
+      "syncNow": "지금 동기화"
+    },
+    "connection": {
+      "title": "연결",
+      "connected": "연결됨",
+      "privacy": {
+        "public": "공개",
+        "private": "비공개"
+      },
+      "disconnect": "연결 해제",
+      "show": "표시"
+    },
+    "sync": {
+      "syncing": "동기화 중...",
+      "button": {
+        "syncNow": "지금 동기화"
+      }
+    },
+    "import": {
+      "clear": "지우기",
+      "preview": "미리 보기",
+      "summary": {
+        "ready": "준비됨",
+        "review": "검토",
+        "conflicts": "충돌",
+        "unmatched": "연결되지 않음",
+        "skipped": "건너뜀"
+      }
+    },
+    "review": {
+      "untitled": "제목 없음",
+      "clearSelection": "선택 해제",
+      "previousPage": "이전 페이지",
+      "nextPage": "다음 페이지",
+      "tabs": {
+        "all": "전체",
+        "ready": "준비됨",
+        "review": "검토",
+        "conflicts": "충돌",
+        "unmatched": "연결되지 않음",
+        "skipped": "건너뜀"
+      },
+      "matchMethod": {
+        "isbn": "ISBN"
+      },
+      "column": {
+        "progress": "진행률"
+      },
+      "summary": {
+        "ready": "준비됨",
+        "review": "검토",
+        "conflicts": "충돌",
+        "unmatched": "연결되지 않음",
+        "skipped": "건너뜀"
+      },
+      "outcome": {
+        "ready": "준비됨",
+        "review": "검토",
+        "unmatched": "연결되지 않음",
+        "skipped": "건너뜀"
+      }
+    },
+    "linkedBooks": {
+      "loading": "도서 불러오는 중...",
+      "retry": "다시 시도",
+      "untitled": "제목 없음",
+      "unknownAuthor": "저자 미상",
+      "matchMethod": {
+        "isbn": "ISBN",
+        "title": "제목",
+        "manual": "수동"
+      }
+    }
+  },
+  "library": {
+    "creator": {
+      "sections": {
+        "details": "상세 정보",
+        "folders": "폴더",
+        "metadata": "메타데이터",
+        "reading": "읽는 중",
+        "schedule": "예약"
+      },
+      "actions": {
+        "saving": "저장 중...",
+        "saveChanges": "변경 사항 저장"
+      },
+      "details": {
+        "libraryName": "도서관 이름",
+        "coverStyle": {
+          "square": "정사각형"
+        }
+      },
+      "folders": {
+        "add": "추가"
+      },
+      "scanner": {
+        "excludePatterns": {
+          "add": "추가"
+        }
+      },
+      "schedule": {
+        "presets": {
+          "custom": "사용자 지정"
+        }
+      },
+      "access": {
+        "levels": {
+          "owner": "소유자"
+        },
+        "columns": {
+          "user": "사용자"
+        }
+      }
+    },
+    "folderPicker": {
+      "create": "만들기"
+    },
+    "upload": {
+      "library": "도서관",
+      "done": "완료",
+      "retry": "다시 시도",
+      "upload": "업로드",
+      "header": {
+        "uploading": "업로드 중...",
+        "uploadBooks": "도서 업로드"
+      }
+    }
+  },
+  "migration": {
+    "status": {
+      "done": "완료",
+      "saved": "저장됨",
+      "running": "실행 중",
+      "failed": "실패"
+    },
+    "badge": {
+      "completed": "완료"
+    },
+    "source": {
+      "fields": {
+        "host": "호스트",
+        "port": "포트",
+        "user": "사용자",
+        "password": "비밀번호",
+        "database": "데이터베이스"
+      },
+      "snapshot": {
+        "unknown": "알 수 없음"
+      }
+    },
+    "mappings": {
+      "refresh": "새로고침",
+      "remove": "제거"
+    },
+    "run": {
+      "retry": "다시 시도"
+    },
+    "report": {
+      "notStarted": "읽기 전",
+      "booksSection": "도서",
+      "bookmarks": "책갈피",
+      "annotations": "메모와 하이라이트"
+    }
+  },
+  "notifications": {
+    "title": "알림",
+    "markAllRead": "모두 읽음으로 표시",
+    "clear": "지우기",
+    "preferences": {
+      "title": "알림",
+      "saving": "저장 중...",
+      "groups": {
+        "library": "도서관",
+        "files": "파일",
+        "integrations": "외부 서비스 연동"
+      },
+      "categories": {
+        "bookDock": {
+          "label": "도서 보관함"
+        },
+        "achievements": {
+          "label": "독서 성취"
+        },
+        "fileWriteBack": {
+          "label": "파일에 기록"
+        }
+      }
+    }
+  },
+  "reader": {
+    "retry": "다시 시도",
+    "peek": {
+      "startReading": "읽기 시작"
+    },
+    "header": {
+      "tableOfContents": "목차",
+      "exitFullscreen": "전체 화면 종료",
+      "goBack": "돌아가기",
+      "toggleBookmark": "책갈피 추가/제거",
+      "cycleFooterMode": "하단 정보 표시 전환",
+      "keyboardShortcutsHint": "키보드 단축키 (?)",
+      "enterFullscreen": "전체 화면 시작",
+      "footerMode": {
+        "pageProgress": "하단 정보: 페이지와 진행률",
+        "sessionTimeLeft": "하단 정보: 독서 세션과 남은 시간",
+        "chapterTimeLeft": "하단 정보: 현재 장과 남은 시간"
+      }
+    },
+    "settings": {
+      "title": "설정",
+      "reset": "기본값으로 초기화",
+      "mode": {
+        "light": "밝게",
+        "dark": "어둡게"
+      },
+      "pageWidthMedium": "보통",
+      "flow": {
+        "paginated": "쪽수",
+        "scrolled": "스크롤"
+      },
+      "spread": {
+        "singlePage": "한 쪽씩",
+        "bookDefault": "도서 기본값"
+      },
+      "themes": {
+        "default": "기본값",
+        "gray": "회색",
+        "sepia": "세피아",
+        "crimson": "진홍색",
+        "meadow": "초원",
+        "rosewood": "장미빛 나무",
+        "azure": "하늘색",
+        "dawnlight": "새벽빛",
+        "ember": "불씨",
+        "aurora": "오로라",
+        "ocean": "바다",
+        "mist": "안개",
+        "amoled": "AMOLED"
+      },
+      "ariaLabel": "뷰어 설정",
+      "close": "설정 닫기",
+      "modeLabel": "색상 모드",
+      "textSize": "글자 크기",
+      "textSizeSmaller": "글자 작게",
+      "textSizeLarger": "글자 크게",
+      "pageColor": "페이지 색상",
+      "font": "글꼴",
+      "fontBuiltIn": "기본 제공",
+      "fontServer": "서버 글꼴",
+      "fontYours": "내 글꼴",
+      "lineSpacing": "줄 간격",
+      "pageWidth": "페이지 너비",
+      "pageWidthNarrow": "좁게",
+      "pageWidthWide": "넓게",
+      "pageWidthFull": "전체",
+      "readingFlow": "읽기 방식",
+      "pageSpreads": "펼침 보기",
+      "pageSpreadsHint": "이미지 기반 EPUB의 페이지 펼침 방식을 선택하세요.",
+      "advanced": "고급 배치 설정",
+      "columns": "열 수",
+      "columnsFewer": "열 줄이기",
+      "columnsMore": "열 늘리기",
+      "columnGap": "열 간격",
+      "justifyText": "양쪽 정렬",
+      "hyphenation": "단어 나눔",
+      "fonts": {
+        "bookDefault": "도서 기본값",
+        "serif": "명조 계열",
+        "sansSerif": "고딕 계열",
+        "monospace": "고정폭 글꼴"
+      }
+    },
+    "sidebar": {
+      "tabs": {
+        "chapters": "장 목록",
+        "bookmarks": "책갈피",
+        "highlights": "하이라이트",
+        "toc": "목차",
+        "notesShort": "메모",
+        "tocShort": "목차",
+        "marksShort": "표시"
+      },
+      "pin": "사이드바 고정",
+      "unpin": "사이드바 고정 해제",
+      "close": "사이드바 닫기",
+      "noChapters": "목차가 없습니다",
+      "noBookmarks": "아직 책갈피가 없습니다",
+      "noBookmarksMatch": "필터에 해당하는 책갈피가 없습니다",
+      "noHighlights": "아직 하이라이트가 없습니다",
+      "noHighlightsMatch": "필터에 해당하는 하이라이트가 없습니다",
+      "searchBookmarks": "책갈피 검색...",
+      "searchHighlights": "하이라이트 검색...",
+      "bookmarkFallback": "책갈피",
+      "locationUnavailable": "위치를 확인할 수 없습니다",
+      "customColor": "사용자 지정 ({color})",
+      "allColors": "모든 색상",
+      "allChapters": "모든 장",
+      "notesOnly": "메모만",
+      "deleteBookmark": "책갈피 삭제",
+      "deleteHighlight": "하이라이트 삭제",
+      "approximatePosition": "기기에서 동기화한 항목으로 정확한 위치가 없어 해당 장으로 이동합니다",
+      "sort": {
+        "readingOrder": "읽는 순서",
+        "newest": "최신순",
+        "oldest": "오래된 순"
+      }
+    },
+    "selection": {
+      "copy": "복사",
+      "highlight": "하이라이트",
+      "translate": "번역",
+      "apply": "적용"
+    },
+    "note": {
+      "title": "메모 추가"
+    },
+    "shortcuts": {
+      "groups": {
+        "reading": "읽는 중",
+        "actions": "작업"
+      },
+      "toggleBookmark": "책갈피 추가/제거",
+      "cycleFooterMode": "하단 정보 표시 전환"
+    },
+    "cbz": {
+      "background": "배경",
+      "readingDirection": "읽기 방향",
+      "zoomOut": "축소",
+      "zoomIn": "확대",
+      "widePage": {
+        "auto": "자동"
+      },
+      "bg": {
+        "gray": "회색"
+      }
+    },
+    "audiobook": {
+      "untitled": "제목 없음",
+      "chapters": "장 목록",
+      "bookmarks": "책갈피",
+      "volume": "음량",
+      "sleepTimer": "취침 타이머",
+      "playbackSpeed": "재생 속도",
+      "speed": "속도"
+    },
+    "pdf": {
+      "controls": {
+        "goBack": "돌아가기",
+        "navigation": "문서 탐색",
+        "searchDocument": "문서 검색",
+        "previousPage": "이전 페이지",
+        "currentPage": "현재 페이지",
+        "nextPage": "다음 페이지",
+        "peeking": "미리 읽는 중",
+        "startReading": "읽기 시작",
+        "zoomOut": "축소",
+        "zoomIn": "확대",
+        "panTool": "이동 도구",
+        "selectTool": "텍스트 선택 도구",
+        "selectText": "텍스트 선택",
+        "exitFullscreen": "전체 화면 종료",
+        "enterFullscreen": "전체 화면 시작",
+        "unpinReaderHeader": "뷰어 상단 고정 해제",
+        "pinReaderHeader": "뷰어 상단 고정",
+        "unpinHeader": "상단 고정 해제",
+        "pinHeader": "상단 고정",
+        "moreTools": "PDF 도구 더 보기",
+        "search": "검색",
+        "pan": "이동",
+        "settings": "PDF 설정",
+        "zoom": "확대/축소",
+        "fitPage": "페이지 맞춤",
+        "fitWidth": "너비 맞춤",
+        "automatic": "자동",
+        "customZoom": "확대 비율 지정",
+        "layout": "배치",
+        "page": "페이지",
+        "verticalScroll": "세로 스크롤",
+        "horizontalScroll": "가로 스크롤",
+        "pageSpread": "펼침 보기",
+        "single": "한 쪽",
+        "odd": "홀수 쪽",
+        "even": "짝수 쪽",
+        "auto": "자동",
+        "rotation": "회전",
+        "rotateLeft": "왼쪽 회전",
+        "rotateRight": "오른쪽 회전",
+        "pages": "페이지",
+        "contents": "목차",
+        "closeNavigation": "문서 탐색 닫기",
+        "noOutline": "이 PDF에는 목차가 없습니다.",
+        "searchPlaceholder": "PDF 내용 검색",
+        "clearSearch": "검색 지우기",
+        "matchCase": "대소문자 구분",
+        "wholeWord": "단어 단위로 검색",
+        "previousResult": "이전 검색 결과",
+        "nextResult": "다음 검색 결과",
+        "minimumQuery": "PDF를 검색하려면 두 글자 이상 입력하세요.",
+        "noMatches": "검색어와 일치하는 텍스트가 없습니다.",
+        "passwordRequired": "비밀번호 필요",
+        "passwordHint": "PDF를 열려면 문서 비밀번호를 입력하세요.",
+        "passwordPlaceholder": "문서 비밀번호",
+        "unlock": "잠금 해제",
+        "passwordError": "비밀번호가 올바르지 않습니다.",
+        "goToPage": "{page}페이지로 이동",
+        "resultPosition": "{total}개 중 {current}번째",
+        "searchProgress": "전체 {total}페이지 중 {current}페이지 검색 중",
+        "pageNumber": "{page}페이지",
+        "resultCount": "검색 결과 {count}개"
+      },
+      "openError": "PDF를 열 수 없습니다",
+      "preparing": "PDF 뷰어 준비 중",
+      "opening": "PDF 여는 중"
+    },
+    "search": {
+      "noResults": "검색 결과가 없습니다"
+    }
+  },
+  "series": {
+    "filters": {
+      "notStarted": "읽기 전"
+    },
+    "list": {
+      "title": "시리즈",
+      "sortButton": "정렬",
+      "sortBy": "정렬 기준",
+      "ascending": "오름차순",
+      "descending": "내림차순",
+      "filters": "필터",
+      "clear": "지우기",
+      "sort": {
+        "name": "이름"
+      }
+    },
+    "detail": {
+      "pageTitle": "시리즈",
+      "entityName": "시리즈",
+      "editMetadata": "메타데이터 편집",
+      "untitled": "제목 없음",
+      "showLess": "접기",
+      "showMore": "더 보기",
+      "booksHeading": "도서",
+      "allBooksLoaded": "도서 {count}권을 모두 불러왔습니다",
+      "sort": {
+        "title": "제목",
+        "recentlyAdded": "최근 추가한 책"
+      },
+      "order": {
+        "ascending": "오름차순",
+        "descending": "내림차순"
+      },
+      "noDescription": "등록된 설명이 없습니다.",
+      "moreAuthors": "외 {count}개",
+      "moreGenres": "외 {count}개",
+      "synopsis": "줄거리"
+    }
+  },
+  "smartScope": {
+    "dialog": {
+      "name": "이름",
+      "create": "만들기",
+      "saving": "저장 중..."
+    },
+    "createDialog": {
+      "title": "스마트 책장 추가"
+    },
+    "editorPanel": {
+      "filters": "필터",
+      "saveChanges": "변경 사항 저장"
+    }
+  },
+  "statistics": {
+    "config": {
+      "reset": "기본값으로 초기화"
+    },
+    "summary": {
+      "books": "도서",
+      "authors": "저자",
+      "series": "시리즈",
+      "storage": "저장 공간",
+      "genres": "장르",
+      "languages": "언어",
+      "published": "발행일",
+      "completed": "완료"
+    },
+    "charts": {
+      "readingSessionTimeline": {
+        "next": "다음"
+      }
+    },
+    "tabs": {
+      "library": "도서관 통계",
+      "user": "내 독서"
+    }
+  },
+  "tools": {
+    "header": {
+      "entityManager": "항목 관리",
+      "bulkRename": "이름 일괄 변경",
+      "duplicateBooks": "중복 도서"
+    },
+    "entityTypes": {
+      "authors": "저자",
+      "genres": "장르",
+      "tags": "태그",
+      "narrators": "낭독자",
+      "languages": "언어",
+      "series": "시리즈"
+    },
+    "bulkRename": {
+      "library": "도서관",
+      "refresh": "새로고침",
+      "columns": {
+        "title": "제목",
+        "status": "상태"
+      },
+      "status": {
+        "error": "오류"
+      },
+      "filter": {
+        "all": "전체"
+      },
+      "summary": {
+        "label": "요약"
+      },
+      "columnsMenu": "열 수"
+    },
+    "bookDuplicates": {
+      "title": "중복 도서",
+      "rescan": "다시 스캔",
+      "unknownAuthor": "저자 미상",
+      "unknown": "알 수 없음",
+      "none": "없음",
+      "fields": {
+        "library": "도서관",
+        "isbn": "ISBN",
+        "formats": "형식",
+        "files": "파일",
+        "readingStatus": "독서 상태",
+        "progress": "진행률",
+        "collections": "컬렉션",
+        "added": "추가됨",
+        "updated": "수정됨",
+        "fileLocation": "파일"
+      },
+      "moreFiles": "외 {count}개"
+    },
+    "entityManager": {
+      "unknown": "알 수 없음",
+      "actions": {
+        "rename": "이름 변경"
+      },
+      "duplicates": {
+        "scan": "스캔"
+      },
+      "dismissed": {
+        "restore": "복원"
+      },
+      "browse": {
+        "searchPlaceholder": "검색...",
+        "clear": "지우기"
+      }
+    }
+  },
+  "views": {
+    "entity": {
+      "book": "도서",
+      "collection": "컬렉션",
+      "library": "도서관",
+      "smartScope": "스마트 책장"
+    },
+    "common": {
+      "retry": "다시 시도"
+    },
+    "bookView": {
+      "sort": "정렬",
+      "sortOn": "켜짐",
+      "resetSort": "기본 정렬로 초기화",
+      "filters": "필터",
+      "clear": "지우기",
+      "clearAllFilters": "모든 필터 지우기",
+      "expandSeries": "시리즈 펼치기",
+      "collapseSeries": "시리즈 접기",
+      "collapseLockedWhileSelecting": "선택 중에는 시리즈가 펼쳐져 있습니다",
+      "expanded": "펼침",
+      "exportMetadata": "메타데이터 내보내기",
+      "showControlsAria": "도서관 도구 표시",
+      "export": "내보내기",
+      "searchPlaceholder": "제목, 저자, 시리즈, 낭독자 검색...",
+      "allBooksLoaded": "도서 {count}권을 모두 불러왔습니다"
+    },
+    "notFound": {
+      "title": "페이지를 찾을 수 없습니다",
+      "description": "요청한 페이지가 없습니다.",
+      "goHome": "홈으로"
+    },
+    "dashboard": {
+      "customize": "대시보드 꾸미기",
+      "allShelvesHidden": "모든 책장이 숨겨져 있습니다.",
+      "greeting": {
+        "night": "편안한 밤 되세요,",
+        "morning": "좋은 아침이에요,",
+        "afternoon": "반가워요,",
+        "evening": "좋은 저녁이에요,",
+        "fallbackName": "독자님"
+      }
+    },
+    "bookDetail": {
+      "title": "도서"
+    },
+    "bookDock": {
+      "title": "도서 보관함",
+      "newFilesDetected": "새 파일이 발견되었습니다",
+      "reconnecting": "다시 연결 중",
+      "rescanFailed": "다시 스캔하지 못했습니다",
+      "dropFiles": "도서 보관함에 파일을 놓으세요",
+      "supportedFormats": "지원 형식: {formats}"
+    },
+    "collection": {
+      "title": "컬렉션",
+      "editCollection": "컬렉션 편집",
+      "showControlsAria": "컬렉션 도구 표시",
+      "loadError": "컬렉션을 불러오지 못했습니다",
+      "toast": {
+        "removeFailed": "컬렉션에서 도서를 제거하지 못했습니다"
+      },
+      "empty": {
+        "noSearchMatch": "검색에 해당하는 도서가 없습니다",
+        "noSearchMatchHint": "검색어를 바꾸거나 검색을 초기화하세요.",
+        "noBooks": "컬렉션에 도서가 없습니다",
+        "noBooksHint": "도서관에서 도서를 선택해 여기에 추가하세요."
+      },
+      "pageTitle": "컬렉션 · {name}",
+      "pageTitleWithId": "컬렉션 #{id}"
+    },
+    "library": {
+      "title": "도서관",
+      "filterRules": "필터 규칙",
+      "saveAsSmartScope": "스마트 책장으로 저장",
+      "saveScope": "책장 저장",
+      "saveAsSmartScopeTooltip": "이 필터에 이름을 붙여 스마트 책장으로 저장",
+      "saved": "저장됨",
+      "saveFilter": "필터 저장",
+      "filterSaved": "필터가 저장되었습니다",
+      "saveFilterTooltip": "이 도서관의 필터 저장",
+      "removeSavedFilter": "저장된 필터 제거",
+      "empty": {
+        "noFilterMatch": "필터에 해당하는 도서가 없습니다",
+        "noFilterMatchHint": "필터를 수정하거나 초기화해 보세요.",
+        "clearFilters": "필터 지우기",
+        "scanning": "도서관 스캔 중...",
+        "scanningHint": "발견한 도서가 여기에 표시됩니다.",
+        "emptyLibrary": "도서관이 비어 있습니다",
+        "emptyLibraryHint": "도서관에 도서를 추가하면 여기에 표시됩니다."
+      },
+      "pageTitle": "도서관 · {name}",
+      "pageTitleWithId": "도서관 #{id}"
+    },
+    "smartScope": {
+      "title": "스마트 책장",
+      "defaultName": "스마트 책장",
+      "filter": "필터",
+      "edit": "스마트 책장 편집",
+      "koboSync": {
+        "label": "내 Kobo와 동기화"
+      },
+      "showControlsAria": "스마트 책장 도구 표시",
+      "hideFilter": "필터 숨기기",
+      "showFilter": "필터 표시",
+      "confirmDelete": "확인하시겠습니까?",
+      "loadError": "스마트 책장을 불러오지 못했습니다",
+      "empty": {
+        "noRules": "설정된 규칙이 없습니다",
+        "configure": "스마트 책장 설정",
+        "noMatch": "스마트 책장 조건에 해당하는 도서가 없습니다",
+        "noMatchHint": "필터 규칙을 수정해 보세요.",
+        "edit": "스마트 책장 편집"
+      },
+      "pageTitle": "스마트 책장 · {name}",
+      "pageTitleWithId": "스마트 책장 #{id}"
+    }
+  },
+  "whatsNew": {
+    "title": "업데이트 소식",
+    "loadMore": "더 불러오기",
+    "retry": "다시 시도",
+    "latest": "최신"
+  },
+  "titles": {
+    "dashboard": "대시보드",
+    "libraries": "도서관",
+    "koboSync": "Kobo 동기화",
+    "koreaderSync": "KOReader 동기화",
+    "bookDock": "도서 보관함",
+    "whatsNew": "업데이트 소식",
+    "annotations": "메모와 하이라이트",
+    "achievements": "독서 성취",
+    "statistics": "통계",
+    "authors": "저자",
+    "series": "시리즈",
+    "entityManager": "항목 관리",
+    "bulkRename": "이름 일괄 변경",
+    "duplicateBooks": "중복 도서",
+    "notFound": "찾을 수 없음",
+    "signIn": "로그인",
+    "initialSetup": "초기 설정",
+    "register": "계정 만들기",
+    "forgotPassword": "비밀번호 찾기",
+    "resetPassword": "비밀번호 재설정",
+    "completingSignIn": "로그인 완료 중",
+    "magicLinkLogin": "간편 링크 로그인",
+    "readPrefix": "읽기",
+    "emailSuffix": "이메일",
+    "library": "도서관",
+    "smartScope": "스마트 책장",
+    "collection": "컬렉션",
+    "author": "저자",
+    "book": "도서",
+    "seriesItem": "시리즈",
+    "appearance": {
+      "theme": "화면",
+      "book-covers": "책 표지",
+      "icons": "아이콘",
+      "layout": "화면 배치",
+      "behavior": "도서관 동작",
+      "language": "언어"
+    },
+    "reader": {
+      "general": "뷰어 설정",
+      "ebook": "전자책 뷰어",
+      "pdf": "PDF 뷰어",
+      "comics": "만화 뷰어",
+      "audio": "오디오북 플레이어",
+      "fonts": "뷰어 글꼴"
+    },
+    "email": {
+      "providers": "제공자",
+      "recipients": "수신자",
+      "groups": "그룹",
+      "templates": "서식",
+      "preferences": "환경 설정",
+      "history": "기록"
+    },
+    "metadata": {
+      "providers": "제공자",
+      "field-rules": "필드별 규칙",
+      "custom-fields": "사용자 정의 메타데이터",
+      "genre-blocklist": "제외 장르",
+      "score": "신뢰도 점수",
+      "auto-fetch": "도서 정보 자동 수집",
+      "authors": "저자 정보 자동 수집"
+    },
+    "admin": {
+      "users": "사용자",
+      "account-activity": "계정 활동",
+      "magic-links": "간편 로그인 링크",
+      "server-fonts": "서버 글꼴",
+      "oidc": "OIDC / 통합 로그인"
+    },
+    "system": {
+      "file-naming": "파일 이름 규칙",
+      "book-dock": "도서 보관함",
+      "maintenance": "유지 관리",
+      "audit-log": "감사 기록"
+    },
+    "account": {
+      "profile": "계정",
+      "privacy": "개인정보 및 공유",
+      "notifications": "알림",
+      "restrictions": "콘텐츠 제한"
+    },
+    "smartScopes": "스마트 책장",
+    "collections": "컬렉션",
+    "opds": "OPDS 카탈로그"
+  },
+  "bookshelf": {
+    "title": "나의 책장",
+    "hint": "책을 골라 펼쳐보세요",
+    "unknownAuthor": "저자 미상",
+    "progress": "독서 진행률 {percent}%",
+    "view": "책장 보기",
+    "shelf": "책장",
+    "previousBook": "이전 책",
+    "nextBook": "다음 책",
+    "loadError": "도서 정보를 불러올 수 없습니다. 접근 권한과 연결 상태를 확인하세요.",
+    "showCover": "표지 보기",
+    "showSpine": "책등 보기"
   }
 }

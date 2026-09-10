@@ -40,7 +40,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(i18n)
 
-// Load and apply the initial locale (stored preference or browser language) before mount
+// Load and apply the initial locale (stored preference or Korean default) before mount
 // so the first paint is already localized. Server-synced locale is applied later during auth.
 const localeStore = useLocaleStore()
 await localeStore.setLocale(localeStore.locale)

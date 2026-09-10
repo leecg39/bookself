@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { nextTick, ref } from 'vue'
 import { KeyRound, LoaderCircle } from '@lucide/vue'
 import type { DocumentState } from '@embedpdf/core'
 import { useDocumentManagerCapability } from '@embedpdf/plugin-document-manager/vue'
 import { SECRET_INPUT_ATTRS } from '@/lib/secret-input'
 
+const { t } = useI18n()
 const props = defineProps<{ documentState: DocumentState }>()
 const emit = defineEmits<{ back: [] }>()
 
@@ -30,7 +32,7 @@ function handleSubmit() {
     () => {
       submitting.value = false
       password.value = ''
-      errorMessage.value = 'That password did not unlock the PDF.'
+      errorMessage.value = t('reader.pdf.controls.passwordError')
       void nextTick(() => passwordInput.value?.focus())
     },
   )
@@ -43,8 +45,8 @@ function handleSubmit() {
       <div class="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
         <KeyRound :size="21" />
       </div>
-      <h2 class="text-center font-serif text-lg font-semibold">Password required</h2>
-      <p class="mt-1 text-center text-xs text-muted-foreground">Enter the document password to open this PDF.</p>
+      <h2 class="text-center font-serif text-lg font-semibold">{{ t('reader.pdf.controls.passwordRequired') }}</h2>
+      <p class="mt-1 text-center text-xs text-muted-foreground">{{ t('reader.pdf.controls.passwordHint') }}</p>
 
       <form class="mt-5" @submit.prevent="handleSubmit">
         <input
@@ -54,7 +56,7 @@ function handleSubmit() {
           type="text"
           autofocus
           :disabled="submitting"
-          placeholder="Document password"
+          :placeholder="t('reader.pdf.controls.passwordPlaceholder')"
           class="input-secret h-10 w-full rounded-md border border-border bg-background px-3 text-sm outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
         />
         <p v-if="errorMessage" class="mt-2 text-xs text-destructive">{{ errorMessage }}</p>
@@ -64,7 +66,7 @@ function handleSubmit() {
             class="rounded-md border border-border px-3 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground"
             @click="handleBack"
           >
-            Go back
+            {{ t('reader.pdf.controls.goBack') }}
           </button>
           <button
             type="submit"
@@ -72,7 +74,7 @@ function handleSubmit() {
             class="flex items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground disabled:opacity-50"
           >
             <LoaderCircle v-if="submitting" :size="14" class="animate-spin" />
-            Unlock
+            {{ t('reader.pdf.controls.unlock') }}
           </button>
         </div>
       </form>

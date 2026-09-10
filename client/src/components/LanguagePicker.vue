@@ -42,8 +42,7 @@ const allLanguages = computed<LanguageOption[]>(() => {
   )
 })
 
-// The browser's own preference order is the best guess we have, and it is the same
-// signal the store uses to pick a default before anyone has chosen one.
+// Suggest browser languages alongside the current choice; the initial default is Korean.
 const suggested = computed<LanguageOption[]>(() => {
   const ids: Locale[] = [localeStore.locale]
 

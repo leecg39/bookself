@@ -314,11 +314,15 @@ function handleDelete() {
         <SheetDescription class="sr-only">{{ t('book.quickView.description') }}</SheetDescription>
         <div class="flex flex-col h-full">
           <div v-if="shelf" class="flex gap-2 px-5 pt-4 pr-12">
-            <button :disabled="!hasPrevious" class="rounded border px-3 py-1 text-xs disabled:opacity-40" @click="previousBook">이전 책</button>
-            <button :disabled="!hasNext" class="rounded border px-3 py-1 text-xs disabled:opacity-40" @click="nextBook">다음 책</button>
+            <button :disabled="!hasPrevious" class="rounded border px-3 py-1 text-xs disabled:opacity-40" @click="previousBook">
+              {{ t('bookshelf.previousBook') }}
+            </button>
+            <button :disabled="!hasNext" class="rounded border px-3 py-1 text-xs disabled:opacity-40" @click="nextBook">
+              {{ t('bookshelf.nextBook') }}
+            </button>
           </div>
           <p v-if="error || notFound" role="alert" class="p-5 text-sm text-destructive">
-            도서 정보를 불러올 수 없습니다. 접근 권한과 연결 상태를 확인하세요.
+            {{ t('bookshelf.loadError') }}
           </p>
           <!-- Header: cover + title block -->
           <div class="p-5 pt-10 border-b shrink-0">
@@ -369,7 +373,7 @@ function handleDelete() {
               <!-- Info -->
               <div class="flex-1 min-w-0 pr-2">
                 <button v-if="shelf" class="mb-3 rounded-md border px-3 py-1 text-xs hover:bg-muted" :aria-pressed="showSpine" @click="toggleSpine">
-                  {{ showSpine ? '표지 보기' : '책등 보기' }}
+                  {{ showSpine ? t('bookshelf.showCover') : t('bookshelf.showSpine') }}
                 </button>
                 <h2 :class="shelf ? 'text-xl sm:text-2xl font-bold leading-snug' : 'text-sm font-bold leading-snug line-clamp-3'">
                   {{ detail.title ?? t('book.untitled') }}

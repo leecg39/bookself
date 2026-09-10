@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { computed, nextTick, onUnmounted, ref, watch } from 'vue'
 import { BookOpen, ChevronLeft, ChevronRight, FileText, LoaderCircle, Search, X } from '@lucide/vue'
 import { RecycleScroller } from 'vue-virtual-scroller'
@@ -13,6 +14,7 @@ import { flattenPdfBookmarks, type FlatPdfBookmark } from '../pdf-viewer-utils'
 
 export type PdfSidebarTab = 'thumbnails' | 'contents' | 'search'
 
+const { t } = useI18n()
 const props = defineProps<{
   documentId: string
   activeTab: PdfSidebarTab
@@ -224,7 +226,7 @@ onUnmounted(() => search.value?.stopSearch())
             @click="selectThumbnails"
           >
             <FileText :size="15" />
-            <span>Pages</span>
+            <span>{{ t('reader.pdf.controls.pages') }}</span>
             <span v-if="props.activeTab === 'thumbnails'" class="absolute inset-x-0 bottom-0 h-0.5 rounded-t-full bg-primary" />
           </button>
           <button
@@ -233,7 +235,7 @@ onUnmounted(() => search.value?.stopSearch())
             @click="selectContents"
           >
             <BookOpen :size="15" />
-            <span>Contents</span>
+            <span>{{ t('reader.pdf.controls.contents') }}</span>
             <span v-if="props.activeTab === 'contents'" class="absolute inset-x-0 bottom-0 h-0.5 rounded-t-full bg-primary" />
           </button>
           <button
@@ -242,11 +244,11 @@ onUnmounted(() => search.value?.stopSearch())
             @click="selectSearch"
           >
             <Search :size="15" />
-            <span>Search</span>
+            <span>{{ t('reader.pdf.controls.search') }}</span>
             <span v-if="props.activeTab === 'search'" class="absolute inset-x-0 bottom-0 h-0.5 rounded-t-full bg-primary" />
           </button>
         </div>
-        <button class="viewer-btn ml-1" aria-label="Close navigation" @click="handleClose">
+        <button class="viewer-btn ml-1" :aria-label="t('reader.pdf.controls.closeNavigation')" @click="handleClose">
           <X :size="17" />
         </button>
       </div>
@@ -257,7 +259,7 @@ onUnmounted(() => search.value?.stopSearch())
             <button
               class="absolute flex w-full cursor-pointer flex-col items-center"
               :style="{ height: `${meta.wrapperHeight}px`, top: `${meta.top}px` }"
-              :aria-label="`Go to page ${meta.pageIndex + 1}`"
+              :aria-label="t('reader.pdf.controls.goToPage', { page: meta.pageIndex + 1 })"
               @click="handleThumbnail(meta.pageIndex)"
             >
               <span
@@ -281,7 +283,7 @@ onUnmounted(() => search.value?.stopSearch())
         <div v-if="bookmarksLoading" class="flex h-32 items-center justify-center text-muted-foreground">
           <LoaderCircle :size="22" class="animate-spin" />
         </div>
-        <p v-else-if="bookmarks.length === 0" class="px-3 py-8 text-center text-xs text-muted-foreground">This PDF has no document outline.</p>
+        <p v-else-if="bookmarks.length === 0" class="px-3 py-8 text-center text-xs text-muted-foreground">{{ t('reader.pdf.controls.noOutline') }}</p>
         <button
           v-for="(entry, entryIndex) in bookmarks"
           :key="entryIndex"
@@ -301,14 +303,14 @@ onUnmounted(() => search.value?.stopSearch())
               ref="searchInput"
               v-model="searchQuery"
               type="search"
-              placeholder="Search this PDF"
+              :placeholder="t('reader.pdf.controls.searchPlaceholder')"
               class="h-9 w-full rounded-md border border-border bg-background pl-9 pr-9 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
               @keydown="handleSearchKeydown"
             />
             <button
               v-if="searchQuery"
               class="absolute right-1.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded text-muted-foreground hover:text-foreground"
-              aria-label="Clear search"
+              :aria-label="t('reader.pdf.controls.clearSearch')"
               @click="handleClearSearch"
             >
               <X :size="14" />
@@ -317,18 +319,22 @@ onUnmounted(() => search.value?.stopSearch())
           <div class="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
             <label class="flex items-center gap-1.5">
               <input type="checkbox" :checked="matchCase" class="accent-primary" @change="handleMatchCase" />
-              Match case
+              {{ t('reader.pdf.controls.matchCase') }}
             </label>
             <label class="flex items-center gap-1.5">
               <input type="checkbox" :checked="wholeWord" class="accent-primary" @change="handleWholeWord" />
-              Whole word
+              {{ t('reader.pdf.controls.wholeWord') }}
             </label>
           </div>
           <div v-if="searchState.active && !searchState.loading" class="mt-2 flex items-center justify-between text-xs text-muted-foreground">
-            <span>{{ activeResultNumber }} of {{ searchState.total }}</span>
+            <span>{{ t('reader.pdf.controls.resultPosition', { current: activeResultNumber, total: searchState.total }) }}</span>
             <div v-if="searchState.total > 1" class="flex items-center">
-              <button class="viewer-btn !h-7 !w-7" aria-label="Previous result" @click="handlePreviousResult"><ChevronLeft :size="15" /></button>
-              <button class="viewer-btn !h-7 !w-7" aria-label="Next result" @click="handleNextResult"><ChevronRight :size="15" /></button>
+              <button class="viewer-btn !h-7 !w-7" :aria-label="t('reader.pdf.controls.previousResult')" @click="handlePreviousResult">
+                <ChevronLeft :size="15" />
+              </button>
+              <button class="viewer-btn !h-7 !w-7" :aria-label="t('reader.pdf.controls.nextResult')" @click="handleNextResult">
+                <ChevronRight :size="15" />
+              </button>
             </div>
           </div>
         </div>
@@ -336,14 +342,16 @@ onUnmounted(() => search.value?.stopSearch())
         <div v-if="searchPending || searchState.loading" class="flex flex-1 items-center justify-center text-muted-foreground">
           <div class="flex flex-col items-center gap-2" role="status" aria-live="polite">
             <LoaderCircle :size="22" class="animate-spin" />
-            <span class="text-xs">Searching page {{ searchProgressPage || 1 }} of {{ scrollState.totalPages || 1 }}</span>
+            <span class="text-xs">{{
+              t('reader.pdf.controls.searchProgress', { current: searchProgressPage || 1, total: scrollState.totalPages || 1 })
+            }}</span>
           </div>
         </div>
         <p v-else-if="normalizedSearchQuery.length === 1" class="px-4 py-8 text-center text-xs text-muted-foreground">
-          Enter at least 2 characters to search this PDF.
+          {{ t('reader.pdf.controls.minimumQuery') }}
         </p>
         <p v-else-if="normalizedSearchQuery.length >= 2 && searchState.total === 0" class="px-4 py-8 text-center text-xs text-muted-foreground">
-          No searchable text matched your query.
+          {{ t('reader.pdf.controls.noMatches') }}
         </p>
         <RecycleScroller
           v-else
@@ -362,7 +370,9 @@ onUnmounted(() => search.value?.stopSearch())
             "
             @click="handleSearchResult(index)"
           >
-            <span class="mb-1 block text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Page {{ item.pageIndex + 1 }}</span>
+            <span class="mb-1 block text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">{{
+              t('reader.pdf.controls.pageNumber', { page: item.pageIndex + 1 })
+            }}</span>
             <span class="line-clamp-2 min-w-0 break-words">
               <template v-if="item.context.truncatedLeft">… </template>{{ item.context.before
               }}<mark class="rounded-sm bg-primary/20 px-0.5 text-foreground">{{ item.context.match }}</mark
@@ -370,7 +380,7 @@ onUnmounted(() => search.value?.stopSearch())
             </span>
           </button>
         </RecycleScroller>
-        <span class="sr-only" aria-live="polite">{{ searchState.total }} search results</span>
+        <span class="sr-only" aria-live="polite">{{ t('reader.pdf.controls.resultCount', { count: searchState.total }) }}</span>
       </div>
     </aside>
   </div>

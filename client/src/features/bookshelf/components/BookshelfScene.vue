@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import type { BookCard } from '@bookorbit/types'
 import { isBookPlaceholder, type BookSlot } from '@/features/book/composables/useBookWindow'
 import { useShelfLayout } from '../composables/useShelfLayout'
@@ -11,6 +12,7 @@ const emit = defineEmits<{
   action: [book: BookCard, action: 'quick-view']
   select: [id: number, event: MouseEvent]
 }>()
+const { t } = useI18n()
 const element = ref<HTMLElement | null>(null)
 const { columns, range, rows, focusIndex } = useShelfLayout(
   element,
@@ -42,10 +44,10 @@ defineExpose({ focusIndex, scrollToIndex: focusIndex })
 <template>
   <div class="rounded-xl bg-(--shelf-paper) px-2 sm:px-6 pt-5 pb-8 text-foreground">
     <div class="flex items-baseline justify-between gap-3 px-2 pb-5 border-b border-(--shelf-wood)/30">
-      <h2 class="font-serif text-2xl sm:text-3xl">나의 책장</h2>
-      <span class="text-xs text-muted-foreground">책을 골라 펼쳐보세요</span>
+      <h2 class="font-serif text-2xl sm:text-3xl">{{ t('bookshelf.title') }}</h2>
+      <span class="text-xs text-muted-foreground">{{ t('bookshelf.hint') }}</span>
     </div>
-    <div ref="element" class="relative" :style="size" aria-label="도서 책장">
+    <div ref="element" class="relative" :style="size" :aria-label="t('bookshelf.title')">
       <div
         v-for="row in rows"
         :key="row"
@@ -53,7 +55,7 @@ defineExpose({ focusIndex, scrollToIndex: focusIndex })
         :style="rowStyle(row)"
       >
         <div v-for="(book, index) in rowBooks(row)" :key="book.id" class="min-w-0">
-          <div v-if="isBookPlaceholder(book)" class="mx-auto h-48 w-10 bg-muted motion-safe:animate-pulse" aria-label="도서 불러오는 중" />
+          <div v-if="isBookPlaceholder(book)" class="mx-auto h-48 w-10 bg-muted motion-safe:animate-pulse" :aria-label="t('common.loading')" />
           <ShelfBook
             v-else
             :book="book"

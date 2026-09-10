@@ -10,6 +10,7 @@ import SidebarNavItem from '@/components/sidebar/SidebarNavItem.vue'
 import SidebarBadge from '@/components/sidebar/SidebarBadge.vue'
 import SidebarEntitySection from '@/components/sidebar/SidebarEntitySection.vue'
 import SidebarSectionPopover from '@/components/sidebar/SidebarSectionPopover.vue'
+import SidebarLanguageSwitch from '@/components/sidebar/SidebarLanguageSwitch.vue'
 import SidebarGithubStar from '@/components/sidebar/SidebarGithubStar.vue'
 import { buildSidebarVersionUi } from '@/components/sidebar/versionUi'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
@@ -368,8 +369,10 @@ onUnmounted(() => stopLibraryUploadListener())
       </template>
     </SidebarContent>
 
-    <SidebarFooter v-if="!isSettingsRoute" class="border-t border-sidebar-border px-4 py-2 group-data-[collapsible=icon]:px-2">
+    <SidebarFooter class="border-t border-sidebar-border px-4 py-2 group-data-[collapsible=icon]:px-2">
+      <SidebarLanguageSwitch :is-rail="isRail" />
       <div
+        v-if="!isSettingsRoute"
         class="grid min-w-0 grid-cols-[1.75rem_minmax(0,1fr)_1.75rem] items-center gap-2 group-data-[collapsible=icon]:grid-cols-1 group-data-[collapsible=icon]:justify-items-center group-data-[collapsible=icon]:gap-1"
       >
         <SidebarGithubStar :is-rail="isRail" />

@@ -76,13 +76,34 @@ describe('locale store', () => {
     expect(detectInitialLocale()).toBe('nl')
   })
 
+  it('defaults to Korean even when the browser prefers English', async () => {
+    vi.stubGlobal('navigator', { languages: ['en-US'], language: 'en-US' })
+    const { detectInitialLocale } = await import('../locale')
+    expect(detectInitialLocale()).toBe('ko')
+    storedValues.set('locale', 'invalid')
+    expect(detectInitialLocale()).toBe('ko')
+    vi.unstubAllGlobals()
+  })
+
+  it('restores a saved English choice and persists switching back to Korean', async () => {
+    storedValues.set('locale', 'en')
+    const { detectInitialLocale, useLocaleStore } = await import('../locale')
+    expect(detectInitialLocale()).toBe('en')
+    const store = useLocaleStore()
+    await store.setLocale('ko')
+    expect(storedValues.get('locale')).toBe('ko')
+    await store.setLocale('en')
+    expect(storedValues.get('locale')).toBe('en')
+    expect(detectInitialLocale()).toBe('en')
+  })
+
   it('persists only after locale activation succeeds', async () => {
     loadLocaleMessages.mockRejectedValueOnce(new Error('chunk failed'))
     const { useLocaleStore } = await import('../locale')
     const store = useLocaleStore()
 
     await expect(store.setLocale('nl')).rejects.toThrow('chunk failed')
-    expect(store.locale).toBe('en')
+    expect(store.locale).toBe('ko')
     expect(storedValues.has('locale')).toBe(false)
 
     await store.setLocale('nl')
